@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { Bug, Ant, Rat, Skull, Bird, Moon, Droplets, SprayCan, ArrowUpRight } from "lucide-react";
+import { Bug, Worm, Rat, Skull, Bird, Moon, Droplets, SprayCan, ArrowUpRight } from "lucide-react";
 
 const services = [
   { icon: Bug, title: "Dedetização de Baratas", desc: "Eliminamos focos escondidos e mantemos o ambiente protegido contra reinfestações." },
-  { icon: Ant, title: "Dedetização de Formigas", desc: "Tratamento que atinge a colônia na raiz e evita novas infestações." },
+  { icon: Worm, title: "Dedetização de Formigas", desc: "Tratamento que atinge a colônia na raiz e evita novas infestações." },
   { icon: Bug, title: "Dedetização de Cupins", desc: "Eliminamos a infestação e protegemos seu patrimônio contra novos ataques." },
   { icon: Rat, title: "Desratização", desc: "Remoção segura de roedores e prevenção contra retorno." },
   { icon: Skull, title: "Controle de Escorpiões", desc: "Eliminação de esconderijos com foco em segurança para crianças e pets." },
