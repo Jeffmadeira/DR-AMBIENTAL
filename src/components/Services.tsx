@@ -47,7 +47,7 @@ export function Services() {
                 className={[
                   "group relative p-7 rounded-2xl bg-card border transition-colors overflow-hidden",
                   s.featured
-                    ? "border-gold/60 shadow-[0_0_40px_-12px_rgba(212,175,55,0.25)] lg:col-span-1"
+                    ? "border-gold/60 shadow-[0_0_40px_-12px_rgba(212,175,55,0.25)]"
                     : "border-border hover:border-gold/50",
                 ].join(" ")}
               >
