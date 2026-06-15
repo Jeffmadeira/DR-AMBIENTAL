@@ -67,41 +67,42 @@ export function Services() {
           {services.map((s, i) => {
             const Icon = s.icon;
             return (
-              <motion.a
-                key={s.title}
-                href={waLink(s.title)}
-                target="_blank"
-                rel="noreferrer"
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.45, delay: Math.min(i, 8) * 0.04 }}
-                whileHover={{ y: -3 }}
-                className={[
-                  "group relative flex flex-col items-start text-left rounded-xl bg-card border p-4 sm:p-5 transition-colors",
-                  s.featured ? "border-gold/60 shadow-[0_0_30px_-10px_rgba(212,175,55,0.25)]" : "border-border hover:border-gold/50",
-                ].join(" ")}
-              >
-                <div className="rounded-xl bg-gradient-gold flex items-center justify-center shadow-gold mb-3 size-12">
-                  <Icon
-                    className="text-primary-foreground"
-                    width={26}
-                    height={26}
-                    strokeWidth={2}
-                  />
-                </div>
-                <h3 className="font-display text-sm sm:text-base text-foreground leading-tight mb-1.5">
-                  {s.title}
-                </h3>
-                <p className="text-xs text-foreground/60 leading-relaxed">
-                  {s.desc}
-                </p>
+              <div key={s.title} className="relative">
                 {s.featured && (
-                  <div className="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-gold/15 border border-gold/40 text-[8px] uppercase tracking-widest text-gold font-semibold">
+                  <div className="absolute -top-2.5 -right-1 z-10 px-2.5 py-0.5 rounded-full bg-gradient-gold text-[8px] sm:text-[10px] uppercase tracking-widest text-primary-foreground font-semibold shadow-gold whitespace-nowrap">
                     Alerta de Infestação
                   </div>
                 )}
-              </motion.a>
+                <motion.a
+                  href={waLink(s.title)}
+                  target="_blank"
+                  rel="noreferrer"
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.45, delay: Math.min(i, 8) * 0.04 }}
+                  whileHover={{ y: -3 }}
+                  className={[
+                    "group relative flex flex-col items-start text-left rounded-xl bg-card border p-4 sm:p-5 transition-colors",
+                    s.featured ? "border-gold/60 shadow-[0_0_30px_-10px_rgba(212,175,55,0.25)]" : "border-border hover:border-gold/50",
+                  ].join(" ")}
+                >
+                  <div className="rounded-xl bg-gradient-gold flex items-center justify-center shadow-gold mb-3 size-12">
+                    <Icon
+                      className="text-primary-foreground"
+                      width={26}
+                      height={26}
+                      strokeWidth={2}
+                    />
+                  </div>
+                  <h3 className="font-display text-sm sm:text-base text-foreground leading-tight mb-1.5">
+                    {s.title}
+                  </h3>
+                  <p className="text-xs text-foreground/60 leading-relaxed">
+                    {s.desc}
+                  </p>
+                </motion.a>
+              </div>
             );
           })}
         </div>
