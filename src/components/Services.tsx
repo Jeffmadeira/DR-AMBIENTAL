@@ -63,9 +63,10 @@ export function Services() {
           </h2>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
           {services.map((s, i) => {
             const Icon = s.icon;
+            const isLarge = i < 4;
             return (
               <motion.a
                 key={s.title}
@@ -76,35 +77,44 @@ export function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.45, delay: Math.min(i, 8) * 0.04 }}
-                whileHover={{ y: -4 }}
+                whileHover={{ y: -3 }}
                 className={[
-                  "group relative p-5 rounded-2xl bg-card border transition-colors overflow-hidden",
-                  s.featured
-                    ? "border-gold/60 shadow-[0_0_40px_-12px_rgba(212,175,55,0.3)]"
-                    : "border-border hover:border-gold/50",
+                  "group relative flex items-center gap-3 rounded-xl bg-card border transition-colors overflow-hidden",
+                  isLarge ? "p-3 sm:p-4 border-border hover:border-gold/50" : "p-2.5 border-border/60 hover:border-gold/40",
+                  s.featured ? "border-gold/60 shadow-[0_0_30px_-10px_rgba(212,175,55,0.25)]" : "",
                 ].join(" ")}
               >
                 <div
                   className={[
-                    "absolute -top-10 -right-10 w-24 h-24 rounded-full blur-2xl transition-colors",
-                    s.featured ? "bg-gold/25 group-hover:bg-gold/35" : "bg-gold/10 group-hover:bg-gold/20",
+                    "shrink-0 rounded-lg bg-gradient-gold flex items-center justify-center shadow-gold",
+                    isLarge ? "size-10" : "size-8",
                   ].join(" ")}
-                />
+                >
+                  <Icon
+                    className="text-primary-foreground"
+                    width={isLarge ? 22 : 16}
+                    height={isLarge ? 22 : 16}
+                    strokeWidth={2.2}
+                  />
+                </div>
+                <div className="min-w-0">
+                  <h3 className={[
+                    "font-display text-foreground leading-tight truncate",
+                    isLarge ? "text-sm sm:text-base" : "text-[11px] sm:text-xs",
+                  ].join(" ")}>
+                    {s.title}
+                  </h3>
+                  {isLarge && (
+                    <p className="text-[10px] sm:text-xs text-foreground/50 leading-snug line-clamp-2 mt-0.5">
+                      {s.desc}
+                    </p>
+                  )}
+                </div>
                 {s.featured && (
-                  <div className="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-gold/15 border border-gold/40 text-[9px] uppercase tracking-widest text-gold font-semibold">
-                    Alerta de Infestação
+                  <div className="absolute top-1.5 right-1.5 px-1.5 py-px rounded-full bg-gold/15 border border-gold/40 text-[7px] uppercase tracking-widest text-gold font-semibold">
+                    Alerta
                   </div>
                 )}
-                <div className="relative">
-                  <div className="size-10 rounded-xl bg-gradient-gold flex items-center justify-center mb-3 shadow-gold">
-                    <Icon className="text-primary-foreground" width={22} height={22} strokeWidth={2.2} />
-                  </div>
-                  <h3 className="font-display text-base text-foreground leading-tight mb-1.5">{s.title}</h3>
-                  <p className="text-xs text-foreground/60 leading-snug line-clamp-2">{s.desc}</p>
-                  <div className="mt-3 inline-flex items-center gap-1 text-[10px] uppercase tracking-widest text-gold">
-                    Solicitar <ArrowUpRight className="size-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </div>
-                </div>
               </motion.a>
             );
           })}
