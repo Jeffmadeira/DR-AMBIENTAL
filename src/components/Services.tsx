@@ -78,7 +78,7 @@ export function Services() {
                 transition={{ duration: 0.45, delay: Math.min(i, 8) * 0.04 }}
                 whileHover={{ y: -3 }}
                 className={[
-                  "group relative flex flex-col items-center text-center rounded-xl bg-card border p-4 sm:p-5 transition-colors",
+                  "group relative flex flex-col items-start text-left rounded-xl bg-card border p-4 sm:p-5 transition-colors",
                   s.featured ? "border-gold/60 shadow-[0_0_30px_-10px_rgba(212,175,55,0.25)]" : "border-border hover:border-gold/50",
                 ].join(" ")}
               >
