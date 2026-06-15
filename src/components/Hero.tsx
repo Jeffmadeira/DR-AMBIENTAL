@@ -110,25 +110,34 @@ export function Hero() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.9, delay: 0.2 }}
+          initial={{ opacity: 0, scale: 0.85, rotate: -3 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ duration: 1, delay: 0.2, type: "spring", stiffness: 80, damping: 16 }}
           className="relative aspect-[4/5] max-w-md mx-auto w-full"
         >
-          <div className="absolute -inset-4 bg-gradient-gold rounded-3xl blur-2xl opacity-30" />
-          <div className="relative h-full w-full rounded-3xl overflow-hidden border border-gold/30 shadow-forest">
+          <motion.div
+            aria-hidden
+            animate={{ opacity: [0.3, 0.55, 0.3], scale: [1, 1.05, 1] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -inset-4 bg-gradient-gold rounded-3xl blur-2xl"
+          />
+          <motion.div
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="relative h-full w-full rounded-3xl overflow-hidden border border-gold/30 shadow-forest"
+          >
             <img src={technician} alt="Técnico Doutor Ambiental" className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-transparent to-transparent" />
             <motion.div
-              initial={{ y: 20, opacity: 0 }}
+              initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.8 }}
+              transition={{ delay: 0.9, type: "spring", stiffness: 200, damping: 18 }}
               className="absolute bottom-6 left-6 right-6 bg-forest-deep/80 backdrop-blur-md border border-gold/30 rounded-2xl p-4"
             >
               <div className="text-[10px] uppercase tracking-[0.2em] text-gold">Profissionais certificados</div>
               <div className="font-display text-xl mt-1">Equipe especializada</div>
             </motion.div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
