@@ -42,10 +42,11 @@ export function FAQ() {
             return (
               <motion.div
                 key={f.q}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
+                initial={{ opacity: 0, y: 30, scale: 0.96 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ delay: i * 0.06, type: "spring", stiffness: 140, damping: 18 }}
+                whileHover={{ scale: 1.01, borderColor: "rgba(212,175,55,0.5)" }}
                 className="rounded-2xl border border-border bg-card overflow-hidden"
               >
                 <button
