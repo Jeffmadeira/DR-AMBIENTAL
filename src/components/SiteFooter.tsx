@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react";
-import logoStacked from "@/assets/logo-stacked.png.asset.json";
+import logoHorizontal from "@/assets/logo-horizontal.png.asset.json";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -10,34 +10,37 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 export function SiteFooter() {
   return (
     <footer id="contato" className="bg-background border-t border-border pt-20 pb-10">
-      <div className="max-w-7xl mx-auto px-5 lg:px-8 grid md:grid-cols-3 gap-12 mb-12 items-start">
-        <div>
-          <h4 className="font-display text-sm tracking-widest text-gold mb-5">A Empresa</h4>
-          <div className="mb-5">
-            <img src={logoStacked.url} alt="Doutor Ambiental — O Especialista no Controle de Pragas" className="h-24 w-auto object-contain" />
-          </div>
-          <p className="text-sm text-foreground/65 leading-relaxed">
+      <div className="max-w-7xl mx-auto px-5 lg:px-8 mb-12">
+        <div className="mb-10">
+          <img
+            src={logoHorizontal.url}
+            alt="Doutor Ambiental — O Especialista no Controle de Pragas"
+            className="h-14 w-auto object-contain"
+          />
+          <p className="text-sm text-foreground/65 leading-relaxed mt-4 max-w-md">
             Especialistas em controle de pragas em Sorocaba e região. Empresa do Grupo Ártica Saúde Ambiental.
           </p>
         </div>
 
-        <div>
-          <h4 className="font-display text-sm tracking-widest text-gold mb-5">Contatos</h4>
-          <ul className="space-y-3 text-sm text-foreground/75">
-            <li className="flex items-center gap-3">
-              <WhatsAppIcon className="size-4 text-gold" />
-              <a href="tel:15988420000">(15) 98842-0000</a>
-            </li>
-            <li className="flex items-center gap-3"><Mail className="size-4 text-gold" /><a href="mailto:comercial@doutorambiental.com.br">comercial@doutorambiental.com.br</a></li>
-          </ul>
-        </div>
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <h4 className="font-display text-sm tracking-widest text-gold mb-5">Contatos</h4>
+            <ul className="space-y-3 text-sm text-foreground/75">
+              <li className="flex items-center gap-3">
+                <WhatsAppIcon className="size-4 text-gold" />
+                <a href="tel:15988420000">(15) 98842-0000</a>
+              </li>
+              <li className="flex items-center gap-3"><Mail className="size-4 text-gold" /><a href="mailto:comercial@doutorambiental.com.br">comercial@doutorambiental.com.br</a></li>
+            </ul>
+          </div>
 
-        <div>
-          <h4 className="font-display text-sm tracking-widest text-gold mb-5">Endereço administrativo</h4>
-          <p className="text-sm text-foreground/75 flex gap-3">
-            <MapPin className="size-4 text-gold shrink-0 mt-0.5" />
-            Av. Antônio Carlos Comitre, 650, Sala 10 — Parque Campolim, Sorocaba/SP — CEP 18047-620
-          </p>
+          <div>
+            <h4 className="font-display text-sm tracking-widest text-gold mb-5">Endereço administrativo</h4>
+            <p className="text-sm text-foreground/75 flex gap-3">
+              <MapPin className="size-4 text-gold shrink-0 mt-0.5" />
+              Av. Antônio Carlos Comitre, 650, Sala 10 — Parque Campolim, Sorocaba/SP — CEP 18047-620
+            </p>
+          </div>
         </div>
       </div>
 
