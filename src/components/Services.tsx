@@ -44,9 +44,22 @@ export function Services() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: i * 0.05 }}
                 whileHover={{ y: -6 }}
-                className="group relative p-7 rounded-2xl bg-card border border-border hover:border-gold/50 transition-colors overflow-hidden"
+                className={[
+                  "group relative p-7 rounded-2xl bg-card border transition-colors overflow-hidden",
+                  s.featured
+                    ? "border-gold/60 shadow-[0_0_40px_-12px_rgba(212,175,55,0.25)] lg:col-span-1"
+                    : "border-border hover:border-gold/50",
+                ].join(" ")}
               >
-                <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-gold/10 group-hover:bg-gold/20 transition-colors blur-2xl" />
+                <div className={[
+                  "absolute -top-12 -right-12 w-32 h-32 rounded-full blur-2xl transition-colors",
+                  s.featured ? "bg-gold/20 group-hover:bg-gold/30" : "bg-gold/10 group-hover:bg-gold/20",
+                ].join(" ")} />
+                {s.featured && (
+                  <div className="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-gold/15 border border-gold/30 text-[10px] uppercase tracking-widest text-gold font-semibold">
+                    Mais procurado
+                  </div>
+                )}
                 <div className="relative">
                   <div className="size-12 rounded-xl bg-gradient-gold flex items-center justify-center mb-5 shadow-gold">
                     <Icon className="size-6 text-primary-foreground" strokeWidth={2.2} />
