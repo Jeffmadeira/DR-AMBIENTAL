@@ -12,8 +12,9 @@ export function SiteFooter() {
     <footer id="contato" className="bg-background border-t border-border pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-5 lg:px-8 grid md:grid-cols-3 gap-12 mb-12 items-start">
         <div>
+          <h4 className="font-display text-sm tracking-widest text-gold mb-5">A Empresa</h4>
           <div className="mb-5">
-            <img src={logoStacked.url} alt="Doutor Ambiental — O Especialista no Controle de Pragas" className="h-40 w-auto object-contain" />
+            <img src={logoStacked.url} alt="Doutor Ambiental — O Especialista no Controle de Pragas" className="h-24 w-auto object-contain" />
           </div>
           <p className="text-sm text-foreground/65 leading-relaxed">
             Especialistas em controle de pragas em Sorocaba e região. Empresa do Grupo Ártica Saúde Ambiental.
