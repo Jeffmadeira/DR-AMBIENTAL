@@ -110,10 +110,3 @@
     pointer-events: none;
   }
 }
-
-.card-tone-0 { background: oklch(0.29 0.045 203); }
-.card-tone-1 { background: oklch(0.305 0.048 195); }
-.card-tone-2 { background: oklch(0.295 0.046 210); }
-.card.data-\[tone\=\"0\"\]:bg-tone { background: oklch(0.29 0.045 203); }
-.data-\[tone\=\"1\"\]:bg-tone { background: oklch(0.305 0.048 195); }
-.data-\[tone\=\"2\"\]:bg-tone { background: oklch(0.295 0.046 210); }
