@@ -40,29 +40,29 @@
   --radius: 0.75rem;
 
   /* Brand */
-  --forest: oklch(0.27 0.045 165);
-  --forest-deep: oklch(0.19 0.04 165);
+  --forest: oklch(0.32 0.045 203);
+  --forest-deep: oklch(0.245 0.042 203);
   --gold: oklch(0.82 0.16 88);
   --gold-deep: oklch(0.68 0.15 75);
 
-  --background: oklch(0.19 0.04 165);
+  --background: oklch(0.245 0.042 203);
   --foreground: oklch(0.98 0.005 90);
-  --card: oklch(0.24 0.045 165);
+  --card: oklch(0.29 0.045 203);
   --card-foreground: oklch(0.98 0.005 90);
-  --popover: oklch(0.24 0.045 165);
+  --popover: oklch(0.29 0.045 203);
   --popover-foreground: oklch(0.98 0.005 90);
   --primary: oklch(0.82 0.16 88);
-  --primary-foreground: oklch(0.19 0.04 165);
-  --secondary: oklch(0.27 0.045 165);
+  --primary-foreground: oklch(0.245 0.042 203);
+  --secondary: oklch(0.32 0.045 203);
   --secondary-foreground: oklch(0.98 0.005 90);
-  --muted: oklch(0.27 0.045 165);
+  --muted: oklch(0.32 0.045 203);
   --muted-foreground: oklch(0.75 0.02 150);
   --accent: oklch(0.82 0.16 88);
-  --accent-foreground: oklch(0.19 0.04 165);
+  --accent-foreground: oklch(0.245 0.042 203);
   --destructive: oklch(0.6 0.22 27);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.35 0.04 165 / 50%);
-  --input: oklch(0.35 0.04 165);
+  --border: oklch(0.40 0.04 203 / 50%);
+  --input: oklch(0.40 0.04 203);
   --ring: oklch(0.82 0.16 88);
 
   --gradient-gold: linear-gradient(135deg, var(--gold), var(--gold-deep));
