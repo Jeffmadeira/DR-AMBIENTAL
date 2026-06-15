@@ -10,7 +10,7 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 export function SiteFooter() {
   return (
     <footer id="contato" className="bg-background border-t border-border pt-20 pb-10">
-      <div className="max-w-7xl mx-auto px-5 lg:px-8 grid md:grid-cols-3 gap-12 mb-12">
+      <div className="max-w-7xl mx-auto px-5 lg:px-8 grid md:grid-cols-3 gap-12 mb-12 items-start">
         <div>
           <div className="mb-5">
             <img src={logoStacked.url} alt="Doutor Ambiental — O Especialista no Controle de Pragas" className="h-40 w-auto object-contain" />
