@@ -63,7 +63,7 @@ export function Services() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           {services.map((s, i) => {
             const Icon = s.icon;
             return (
@@ -83,7 +83,7 @@ export function Services() {
                   transition={{ duration: 0.45, delay: Math.min(i, 8) * 0.04 }}
                   whileHover={{ y: -3 }}
                   className={[
-                    "group relative flex flex-col items-start text-left rounded-xl bg-card border p-4 sm:p-5 transition-colors",
+                    "group relative flex flex-col items-start text-left rounded-xl bg-card border p-4 sm:p-5 transition-colors h-full",
                     s.featured ? "border-gold/60 shadow-[0_0_30px_-10px_rgba(212,175,55,0.25)]" : "border-border hover:border-gold/50",
                   ].join(" ")}
                 >
