@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import type { ComponentType, SVGProps } from "react";
-import { Rat, Bird, Droplets, SprayCan, ArrowUpRight } from "lucide-react";
+import { Rat, Bird, Droplets, SprayCan } from "lucide-react";
 import {
   ScorpionIcon,
   CockroachIcon,
@@ -46,6 +46,12 @@ const waLink = (title: string) =>
     `Olá! Gostaria de um orçamento para ${title}.`,
   )}`;
 
+const cardTones = [
+  "oklch(0.29 0.045 203)",
+  "oklch(0.305 0.05 195)",
+  "oklch(0.295 0.047 210)",
+];
+
 export function Services() {
   return (
     <section id="servicos" className="relative py-28 bg-forest-deep">
@@ -64,15 +70,6 @@ export function Services() {
         </motion.div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-          {services.map((s, i) => {
-            const tone = i % 3;
-            const bgColor =
-              tone === 0
-                ? "oklch(0.29 0.045 203)"
-                : tone === 1
-                  ? "oklch(0.305 0.05 195)"
-                  : "oklch(0.295 0.047 210)";
-            return (
           {services.map((s, i) => {
             const Icon = s.icon;
             return (
@@ -99,9 +96,10 @@ export function Services() {
                   whileHover={{ y: -6, scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   className={[
-                    "group relative flex flex-col items-start text-left rounded-xl bg-card border p-4 sm:p-5 transition-colors h-full",
+                    "group relative flex flex-col items-start text-left rounded-xl border p-4 sm:p-5 transition-colors h-full",
                     s.featured ? "border-gold/60 shadow-[0_0_30px_-10px_rgba(212,175,55,0.25)]" : "border-border hover:border-gold/50",
                   ].join(" ")}
+                  style={{ backgroundColor: cardTones[i % cardTones.length] }}
                 >
                   <motion.div
                     whileHover={{ rotate: [0, -10, 10, -6, 0], scale: 1.1 }}
