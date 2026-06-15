@@ -13,12 +13,19 @@ export function CTASection() {
       <div className="absolute inset-0 bg-gradient-gold opacity-[0.08]" />
       <div className="max-w-5xl mx-auto px-5 lg:px-8 relative">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0, y: 40, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, type: "spring", stiffness: 90, damping: 18 }}
           className="relative rounded-3xl border border-gold/40 bg-card/60 backdrop-blur p-10 lg:p-16 text-center overflow-hidden"
         >
-          <img src={shield} alt="" className="absolute -right-20 -top-10 w-80 opacity-20 pointer-events-none" />
+          <motion.img
+            src={shield}
+            alt=""
+            animate={{ rotate: [0, 8, -4, 0], scale: [1, 1.05, 1] }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -right-20 -top-10 w-80 opacity-20 pointer-events-none"
+          />
           <div className="relative">
             <div className="text-xs uppercase tracking-[0.3em] text-gold mb-4">Sua casa livre de pragas</div>
             <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl mb-5">
@@ -27,15 +34,25 @@ export function CTASection() {
             <p className="text-foreground/75 max-w-xl mx-auto mb-8">
               Fale agora com um especialista e receba seu orçamento gratuito em poucos minutos.
             </p>
-            <a
+            <motion.a
               href="https://api.whatsapp.com/send/?phone=5515988420000&text=Ol%C3%A1+Doutor+Ambiental%2C+eu+vim+do+seu+site+e+gostaria+de+um+or%C3%A7amento."
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 bg-gradient-gold text-primary-foreground font-bold px-10 py-4 rounded-full shadow-gold hover:scale-[1.03] transition-transform"
+              whileHover={{ scale: 1.08, y: -3 }}
+              whileTap={{ scale: 0.95 }}
+              animate={{ boxShadow: ["0 10px 30px -10px rgba(212,175,55,0.4)", "0 14px 40px -8px rgba(212,175,55,0.7)", "0 10px 30px -10px rgba(212,175,55,0.4)"] }}
+              transition={{ boxShadow: { duration: 2.4, repeat: Infinity, ease: "easeInOut" }, scale: { type: "spring", stiffness: 400, damping: 16 } }}
+              className="inline-flex items-center gap-2 bg-gradient-gold text-primary-foreground font-bold px-10 py-4 rounded-full relative overflow-hidden"
             >
-              <WhatsAppIcon className="size-5" />
-              Solicitar orçamento gratuito
-            </a>
+              <motion.span
+                aria-hidden
+                animate={{ x: ["-150%", "200%"] }}
+                transition={{ duration: 2.2, repeat: Infinity, repeatDelay: 1.4, ease: "easeInOut" }}
+                className="absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12"
+              />
+              <WhatsAppIcon className="size-5 relative" />
+              <span className="relative">Solicitar orçamento gratuito</span>
+            </motion.a>
           </div>
         </motion.div>
       </div>

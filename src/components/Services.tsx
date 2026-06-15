@@ -69,32 +69,43 @@ export function Services() {
             return (
               <div key={s.title} className="relative">
                 {s.featured && (
-                  <div className="absolute -top-2.5 -right-1 z-10 px-2.5 py-0.5 rounded-full bg-gradient-gold text-[8px] sm:text-[10px] uppercase tracking-widest text-primary-foreground font-semibold shadow-gold whitespace-nowrap">
+                  <motion.div
+                    initial={{ scale: 0, rotate: -12 }}
+                    whileInView={{ scale: [0, 1.2, 1], rotate: [-12, 6, 0] }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ delay: 0.3, duration: 0.7, type: "spring", stiffness: 260, damping: 14 }}
+                    className="absolute -top-2.5 -right-1 z-10 px-2.5 py-0.5 rounded-full bg-gradient-gold text-[8px] sm:text-[10px] uppercase tracking-widest text-primary-foreground font-semibold shadow-gold whitespace-nowrap"
+                  >
                     Alerta de Infestação
-                  </div>
+                  </motion.div>
                 )}
                 <motion.a
                   href={waLink(s.title)}
                   target="_blank"
                   rel="noreferrer"
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.45, delay: Math.min(i, 8) * 0.04 }}
-                  whileHover={{ y: -3 }}
+                  initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, amount: 0.2, margin: "0px 0px -10% 0px" }}
+                  transition={{ duration: 0.5, delay: Math.min(i, 8) * 0.05, type: "spring", stiffness: 180, damping: 18 }}
+                  whileHover={{ y: -6, scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
                   className={[
                     "group relative flex flex-col items-start text-left rounded-xl bg-card border p-4 sm:p-5 transition-colors h-full",
                     s.featured ? "border-gold/60 shadow-[0_0_30px_-10px_rgba(212,175,55,0.25)]" : "border-border hover:border-gold/50",
                   ].join(" ")}
                 >
-                  <div className="rounded-xl bg-gradient-gold flex items-center justify-center shadow-gold mb-3 size-12">
+                  <motion.div
+                    whileHover={{ rotate: [0, -10, 10, -6, 0], scale: 1.1 }}
+                    transition={{ duration: 0.6 }}
+                    className="rounded-xl bg-gradient-gold flex items-center justify-center shadow-gold mb-3 size-12"
+                  >
                     <Icon
                       className="text-primary-foreground"
                       width={26}
                       height={26}
                       strokeWidth={2}
                     />
-                  </div>
+                  </motion.div>
                   <h3 className="font-display text-sm sm:text-base text-foreground leading-tight mb-1.5">
                     {s.title}
                   </h3>

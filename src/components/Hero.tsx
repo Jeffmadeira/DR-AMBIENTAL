@@ -13,25 +13,41 @@ export function Hero() {
     <section id="top" className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden noise-overlay">
       {/* gradient ambient */}
       <div className="absolute inset-0 bg-gradient-forest" />
-      <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-gold/20 blur-[120px]" />
-      <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-gold/10 blur-[120px]" />
+      <motion.div
+        aria-hidden
+        animate={{ x: [0, 40, -20, 0], y: [0, -30, 20, 0], scale: [1, 1.1, 0.95, 1] }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-gold/20 blur-[120px]"
+      />
+      <motion.div
+        aria-hidden
+        animate={{ x: [0, -30, 25, 0], y: [0, 20, -25, 0], scale: [1, 0.9, 1.1, 1] }}
+        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-gold/10 blur-[120px]"
+      />
 
       <div className="relative max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-12 items-center w-full">
         <div>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 20, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.6, type: "spring", stiffness: 200, damping: 18 }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/40 bg-gold/5 text-gold text-xs tracking-[0.2em] uppercase mb-6"
           >
-            <Sparkles className="size-3.5" />
+            <motion.span
+              animate={{ rotate: [0, 15, -10, 0], scale: [1, 1.2, 1] }}
+              transition={{ duration: 2.4, repeat: Infinity, repeatDelay: 1.2 }}
+              className="inline-flex"
+            >
+              <Sparkles className="size-3.5" />
+            </motion.span>
             Dedetização em Sorocaba e Região
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
+            transition={{ duration: 0.8, delay: 0.1, type: "spring", stiffness: 90, damping: 18 }}
             className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] text-foreground"
           >
             Livre-se das <span className="text-gradient-gold">pragas</span> de uma vez por todas.
@@ -40,7 +56,7 @@ export function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.25 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
             className="mt-6 text-lg text-foreground/75 max-w-xl leading-relaxed"
           >
             Proteção contra pragas e prevenção contínua para manter sua casa ou seu negócio sempre seguro — com produtos seguros para família e pets.
@@ -49,24 +65,36 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
+            transition={{ duration: 0.7, delay: 0.45 }}
             className="mt-10 flex flex-wrap gap-4"
           >
-            <a
+            <motion.a
+              whileHover={{ scale: 1.06, y: -2 }}
+              whileTap={{ scale: 0.96 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
               href="https://api.whatsapp.com/send/?phone=5515988420000&text=Ol%C3%A1+Doutor+Ambiental%2C+eu+vim+do+seu+site+e+gostaria+de+um+or%C3%A7amento."
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 bg-gradient-gold text-primary-foreground font-bold px-8 py-4 rounded-full shadow-gold hover:scale-[1.03] transition-transform"
+              className="inline-flex items-center gap-2 bg-gradient-gold text-primary-foreground font-bold px-8 py-4 rounded-full shadow-gold relative overflow-hidden"
             >
-              <WhatsAppIcon className="size-5" />
-              Peça um orçamento grátis
-            </a>
-            <a
+              <motion.span
+                aria-hidden
+                animate={{ x: ["-150%", "200%"] }}
+                transition={{ duration: 2.4, repeat: Infinity, repeatDelay: 1.6, ease: "easeInOut" }}
+                className="absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12"
+              />
+              <WhatsAppIcon className="size-5 relative" />
+              <span className="relative">Peça um orçamento grátis</span>
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.96 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
               href="#servicos"
               className="inline-flex items-center gap-2 border border-gold/50 text-foreground font-semibold px-8 py-4 rounded-full hover:bg-gold/10 transition-colors"
             >
               Nossos serviços
-            </a>
+            </motion.a>
           </motion.div>
 
           <motion.div
@@ -82,25 +110,34 @@ export function Hero() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.9, delay: 0.2 }}
+          initial={{ opacity: 0, scale: 0.85, rotate: -3 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ duration: 1, delay: 0.2, type: "spring", stiffness: 80, damping: 16 }}
           className="relative aspect-[4/5] max-w-md mx-auto w-full"
         >
-          <div className="absolute -inset-4 bg-gradient-gold rounded-3xl blur-2xl opacity-30" />
-          <div className="relative h-full w-full rounded-3xl overflow-hidden border border-gold/30 shadow-forest">
+          <motion.div
+            aria-hidden
+            animate={{ opacity: [0.3, 0.55, 0.3], scale: [1, 1.05, 1] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -inset-4 bg-gradient-gold rounded-3xl blur-2xl"
+          />
+          <motion.div
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="relative h-full w-full rounded-3xl overflow-hidden border border-gold/30 shadow-forest"
+          >
             <img src={technician} alt="Técnico Doutor Ambiental" className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-transparent to-transparent" />
             <motion.div
-              initial={{ y: 20, opacity: 0 }}
+              initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.8 }}
+              transition={{ delay: 0.9, type: "spring", stiffness: 200, damping: 18 }}
               className="absolute bottom-6 left-6 right-6 bg-forest-deep/80 backdrop-blur-md border border-gold/30 rounded-2xl p-4"
             >
               <div className="text-[10px] uppercase tracking-[0.2em] text-gold">Profissionais certificados</div>
               <div className="font-display text-xl mt-1">Equipe especializada</div>
             </motion.div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
