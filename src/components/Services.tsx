@@ -1,16 +1,16 @@
 import { motion } from "framer-motion";
-import { Bug, Worm, Rat, Skull, Bird, Moon, Droplets, SprayCan, ArrowUpRight } from "lucide-react";
+import { Bug, Worm, Rat, Bird, Moon, Droplets, SprayCan, ArrowUpRight, ShieldAlert, Flame, Shield } from "lucide-react";
 
 const services = [
+  { icon: ShieldAlert, title: "Controle de Escorpiões", desc: "Eliminação de esconderijos com foco em segurança para crianças e pets.", featured: true },
   { icon: Bug, title: "Dedetização de Baratas", desc: "Eliminamos focos escondidos e mantemos o ambiente protegido contra reinfestações." },
   { icon: Worm, title: "Dedetização de Formigas", desc: "Tratamento que atinge a colônia na raiz e evita novas infestações." },
-  { icon: Bug, title: "Dedetização de Cupins", desc: "Eliminamos a infestação e protegemos seu patrimônio contra novos ataques." },
+  { icon: Flame, title: "Dedetização de Cupins", desc: "Eliminamos a infestação e protegemos seu patrimônio contra novos ataques." },
   { icon: Rat, title: "Desratização", desc: "Remoção segura de roedores e prevenção contra retorno." },
-  { icon: Skull, title: "Controle de Escorpiões", desc: "Eliminação de esconderijos com foco em segurança para crianças e pets." },
   { icon: Bird, title: "Controle de Pombos", desc: "Manejo humanizado que afasta as aves e protege seu patrimônio." },
   { icon: Moon, title: "Controle de Morcegos", desc: "Manejo seguro e dentro das normas sanitárias vigentes." },
   { icon: Droplets, title: "Limpeza de Caixa d'Água", desc: "Remoção de impurezas e garantia de água mais segura para sua família." },
-  { icon: SprayCan, title: "Sanitização de Ambientes", desc: "Redução de vírus, bactérias e microrganismos para espaços mais seguros." },
+  { icon: Shield, title: "Sanitização de Ambientes", desc: "Redução de vírus, bactérias e microrganismos para espaços mais seguros." },
 ];
 
 export function Services() {
