@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { useState, useEffect } from "react";
-import logo from "@/assets/logo.jpg";
+import logoHoriz from "@/assets/logo-horizontal.png.asset.json";
 
 const links = [
   { label: "Serviços", href: "#servicos" },
