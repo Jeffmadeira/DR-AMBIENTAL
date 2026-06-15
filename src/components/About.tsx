@@ -15,10 +15,10 @@ export function About() {
       <div className="absolute top-1/2 -right-40 w-[500px] h-[500px] rounded-full bg-gold/10 blur-[140px]" />
       <div className="relative max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
         <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          initial={{ opacity: 0, x: -60, scale: 0.95 }}
+          whileInView={{ opacity: 1, x: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, type: "spring", stiffness: 80, damping: 18 }}
           className="relative rounded-3xl overflow-hidden border border-gold/30 aspect-[4/3]"
         >
           <img src={van} alt="Frota Doutor Ambiental" className="w-full h-full object-cover" />
@@ -26,10 +26,10 @@ export function About() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: 40 }}
+          initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, type: "spring", stiffness: 80, damping: 18 }}
         >
           <div className="text-xs uppercase tracking-[0.3em] text-gold mb-3">Quem somos</div>
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl mb-6">
@@ -44,11 +44,18 @@ export function About() {
           </p>
 
           <ul className="space-y-3">
-            {points.map((p) => (
-              <li key={p} className="flex items-start gap-3">
+            {points.map((p, i) => (
+              <motion.li
+                key={p}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ delay: 0.3 + i * 0.1, type: "spring", stiffness: 200, damping: 20 }}
+                className="flex items-start gap-3"
+              >
                 <CheckCircle2 className="size-5 text-gold shrink-0 mt-0.5" />
                 <span className="text-foreground/85">{p}</span>
-              </li>
+              </motion.li>
             ))}
           </ul>
         </motion.div>
