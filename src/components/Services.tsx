@@ -65,6 +65,15 @@ export function Services() {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           {services.map((s, i) => {
+            const tone = i % 3;
+            const bgColor =
+              tone === 0
+                ? "oklch(0.29 0.045 203)"
+                : tone === 1
+                  ? "oklch(0.305 0.05 195)"
+                  : "oklch(0.295 0.047 210)";
+            return (
+          {services.map((s, i) => {
             const Icon = s.icon;
             return (
               <div key={s.title} className="relative">
