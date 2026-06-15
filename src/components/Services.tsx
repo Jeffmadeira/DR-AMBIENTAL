@@ -63,10 +63,9 @@ export function Services() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
           {services.map((s, i) => {
             const Icon = s.icon;
-            const isLarge = i < 4;
             return (
               <motion.a
                 key={s.title}
@@ -79,40 +78,27 @@ export function Services() {
                 transition={{ duration: 0.45, delay: Math.min(i, 8) * 0.04 }}
                 whileHover={{ y: -3 }}
                 className={[
-                  "group relative flex items-center gap-3 rounded-xl bg-card border transition-colors overflow-hidden",
-                  isLarge ? "p-3 sm:p-4 border-border hover:border-gold/50" : "p-2.5 border-border/60 hover:border-gold/40",
-                  s.featured ? "border-gold/60 shadow-[0_0_30px_-10px_rgba(212,175,55,0.25)]" : "",
+                  "group relative flex flex-col items-center text-center rounded-xl bg-card border p-4 sm:p-5 transition-colors",
+                  s.featured ? "border-gold/60 shadow-[0_0_30px_-10px_rgba(212,175,55,0.25)]" : "border-border hover:border-gold/50",
                 ].join(" ")}
               >
-                <div
-                  className={[
-                    "shrink-0 rounded-lg bg-gradient-gold flex items-center justify-center shadow-gold",
-                    isLarge ? "size-10" : "size-8",
-                  ].join(" ")}
-                >
+                <div className="rounded-xl bg-gradient-gold flex items-center justify-center shadow-gold mb-3 size-12">
                   <Icon
                     className="text-primary-foreground"
-                    width={isLarge ? 22 : 16}
-                    height={isLarge ? 22 : 16}
-                    strokeWidth={2.2}
+                    width={26}
+                    height={26}
+                    strokeWidth={2}
                   />
                 </div>
-                <div className="min-w-0">
-                  <h3 className={[
-                    "font-display text-foreground leading-tight truncate",
-                    isLarge ? "text-sm sm:text-base" : "text-[11px] sm:text-xs",
-                  ].join(" ")}>
-                    {s.title}
-                  </h3>
-                  {isLarge && (
-                    <p className="text-[10px] sm:text-xs text-foreground/50 leading-snug line-clamp-2 mt-0.5">
-                      {s.desc}
-                    </p>
-                  )}
-                </div>
+                <h3 className="font-display text-sm sm:text-base text-foreground leading-tight mb-1.5">
+                  {s.title}
+                </h3>
+                <p className="text-xs text-foreground/60 leading-relaxed">
+                  {s.desc}
+                </p>
                 {s.featured && (
-                  <div className="absolute top-1.5 right-1.5 px-1.5 py-px rounded-full bg-gold/15 border border-gold/40 text-[7px] uppercase tracking-widest text-gold font-semibold">
-                    Alerta
+                  <div className="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-gold/15 border border-gold/40 text-[8px] uppercase tracking-widest text-gold font-semibold">
+                    Alerta de Infestação
                   </div>
                 )}
               </motion.a>
