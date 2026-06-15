@@ -71,10 +71,9 @@ export function Services() {
                 {s.featured && (
                   <motion.div
                     initial={{ scale: 0, rotate: -12 }}
-                    whileInView={{ scale: 1, rotate: 0 }}
+                    whileInView={{ scale: [0, 1.2, 1], rotate: [-12, 6, 0] }}
                     viewport={{ once: true, amount: 0.2 }}
-                    transition={{ delay: 0.3, type: "spring", stiffness: 300, damping: 14 }}
-                    animate={{ y: [0, -3, 0] }}
+                    transition={{ delay: 0.3, duration: 0.7, type: "spring", stiffness: 260, damping: 14 }}
                     className="absolute -top-2.5 -right-1 z-10 px-2.5 py-0.5 rounded-full bg-gradient-gold text-[8px] sm:text-[10px] uppercase tracking-widest text-primary-foreground font-semibold shadow-gold whitespace-nowrap"
                   >
                     Alerta de Infestação
