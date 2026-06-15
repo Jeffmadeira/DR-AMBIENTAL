@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { useState, useEffect } from "react";
-import logo from "@/assets/logo.jpg";
+import logoHoriz from "@/assets/logo-horizontal.png.asset.json";
 
 const links = [
   { label: "Serviços", href: "#servicos" },
@@ -32,11 +32,7 @@ export function SiteHeader() {
     >
       <div className="max-w-7xl mx-auto px-5 lg:px-8 h-20 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-3">
-          <img src={logo} alt="Doutor Ambiental" className="h-12 w-12 rounded-md object-cover" />
-          <div className="hidden sm:block leading-tight">
-            <div className="font-display text-lg tracking-wide text-foreground">DOUTOR AMBIENTAL</div>
-            <div className="text-[10px] text-gold tracking-[0.2em] uppercase">Controle de Pragas</div>
-          </div>
+          <img src={logoHoriz.url} alt="Doutor Ambiental — O Especialista no Controle de Pragas" className="h-12 md:h-14 w-auto object-contain" />
         </a>
 
         <nav className="hidden lg:flex items-center gap-8">
