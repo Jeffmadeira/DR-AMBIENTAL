@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react";
-import logoHorizontal from "@/assets/logo-horizontal.png.asset.json";
+const logoHorizontal = { url: "/assets/logo-horizontal.png" };
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">

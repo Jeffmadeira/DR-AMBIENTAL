@@ -1,34 +1,30 @@
-# Publicar na Vercel
-
 ## Problema
 
-Hoje o projeto compila para **Cloudflare Workers** (preset padrão do `@lovable.dev/vite-tanstack-config` via Nitro). A Vercel não reconhece esse output e devolve `404: NOT_FOUND` (a página de erro que você mandou é da própria Vercel, não do app).
+O logo (e outros assets) usam URLs do tipo `/__l5e/assets-v1/...` — essa é a **infraestrutura de assets da Lovable** (Cloudflare R2 servida pelo runtime da Lovable). Quando o site é deployado na Vercel, esse endpoint **não existe**, então o `<img src="/__l5e/...">` retorna 404 e o logo não aparece.
 
-Para rodar na Vercel, o Nitro precisa gerar o output no formato `.vercel/output/` (Build Output API v3).
+Os arquivos `.asset.json` no projeto são apenas **ponteiros** para o CDN da Lovable, não os binários reais.
 
-## O que vou fazer
+## Assets afetados
 
-1. **Trocar o preset de deploy para Vercel** em `vite.config.ts`, passando `nitro: { preset: "vercel" }` (ou `vercel-edge` se preferir edge runtime) para o `@lovable.dev/vite-tanstack-config`.
-2. **Adicionar `vercel.json`** mínimo apontando para o output do Nitro, caso a Vercel não detecte automaticamente.
-3. **Atualizar `package.json`** se necessário para expor o script `build` que a Vercel executa (`vite build`).
-4. **Documentar variáveis de ambiente** que você precisa configurar no dashboard da Vercel:
-   - Se usar Lovable Cloud/AI: `LOVABLE_API_KEY`, `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SERVICE_ROLE_KEY` (essas hoje são injetadas automaticamente pela Lovable — na Vercel você precisa copiar manualmente).
-   - Qualquer `VITE_*` usada no client.
+Todos os `.asset.json` do projeto:
+- `src/assets/logo-horizontal.png.asset.json` (usado no `SiteHeader`)
+- `src/assets/logo-stacked.png.asset.json`
+- (verificar se há outros usados em Hero, About, etc.)
 
-## Detalhes técnicos
+## Solução
 
-- Nitro suporta nativamente o preset `vercel` — ele gera `.vercel/output/functions/` + `.vercel/output/static/` que a Vercel entende sem config extra.
-- SSR continua funcionando (as rotas TanStack Start viram uma Serverless Function `__nitro.func`).
-- O wrapper de erro em `src/server.ts` continua válido — o preset Nitro-Vercel usa o mesmo entry.
-- **Atenção**: se este projeto usa Lovable Cloud, a integração de auth/DB **não é portada automaticamente** — as chaves do Supabase precisam ser configuradas manualmente no painel da Vercel. Não vou conseguir testar o deploy da Vercel a partir daqui; você faz o `git push` e a Vercel builda.
+Baixar os binários do CDN da Lovable e servir localmente pela Vercel:
 
-## Riscos / limitações
+1. Para cada `.asset.json`, baixar o PNG real da URL absoluta (`https://<preview>.lovable.app/__l5e/...`) para `public/assets/` no repositório.
+2. Substituir os imports `import logo from "@/assets/logo-horizontal.png.asset.json"` + `logo.url` por caminho estático `"/assets/logo-horizontal.png"` (ou import direto via Vite `import logo from "@/assets/logo-horizontal.png"`).
+3. Remover os arquivos `.asset.json` (opcional — podem ficar sem uso, mas é mais limpo remover).
 
-- O template Lovable é otimizado para hosting Cloudflare da Lovable. Mudanças em `vite.config.ts` para trocar o preset **podem ser sobrescritas** em updates futuros do template.
-- Recursos como injeção automática de secrets do Lovable Cloud **não funcionam na Vercel** — você gerencia as env vars manualmente.
-- Recomendo fortemente usar o Publish da Lovable (que já funciona no seu domínio `drambiental.viision.com.br`), mas seguimos com Vercel conforme você pediu.
+## Impacto
 
-## Arquivos alterados
+- **No Lovable**: continua funcionando (arquivos servidos via `/public` pelo Vite).
+- **Na Vercel**: passa a funcionar (arquivos incluídos no build estático).
+- **Componentes alterados**: `SiteHeader.tsx` e qualquer outro que referencie `.asset.json`.
 
-- `vite.config.ts` — adicionar `nitro.preset = "vercel"`
-- `vercel.json` (novo, se necessário)
+## Verificação
+
+Após implementar, checar via `rg "asset.json"` que não restou referência, e listar `public/assets/` para confirmar os binários.
