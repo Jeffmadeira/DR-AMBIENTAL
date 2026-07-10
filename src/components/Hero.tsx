@@ -126,7 +126,7 @@ export function Hero() {
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             className="relative h-full w-full rounded-3xl overflow-hidden border border-gold/30 shadow-forest"
           >
-            <img src={technician} alt="Técnico Doutor Ambiental" className="h-full w-full object-cover" />
+            <img src={technician} alt="Técnico Doutor Ambiental" width={800} height={1000} fetchPriority="high" decoding="async" className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-transparent to-transparent" />
             <motion.div
               initial={{ y: 30, opacity: 0 }}
