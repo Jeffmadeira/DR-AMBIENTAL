@@ -1,30 +1,27 @@
-## Problema
+## Objetivo
+Conectar https://www.doutorambiental.com.br ao Google Search Console (GSC) da sua conta Google já conectada no Lovable, para monitorar indexação e corrigir findings de SEO restantes.
 
-O logo (e outros assets) usam URLs do tipo `/__l5e/assets-v1/...` — essa é a **infraestrutura de assets da Lovable** (Cloudflare R2 servida pelo runtime da Lovable). Quando o site é deployado na Vercel, esse endpoint **não existe**, então o `<img src="/__l5e/...">` retorna 404 e o logo não aparece.
+## Passos
 
-Os arquivos `.asset.json` no projeto são apenas **ponteiros** para o CDN da Lovable, não os binários reais.
+1. **Gerar token de verificação META** via API do Site Verification usando a conexão existente ("Jefferson's Google Search Console").
 
-## Assets afetados
+2. **Adicionar meta tag no `<head>`** em `src/routes/__root.tsx`:
+   ```html
+   <meta name="google-site-verification" content="<TOKEN>" />
+   ```
 
-Todos os `.asset.json` do projeto:
-- `src/assets/logo-horizontal.png.asset.json` (usado no `SiteHeader`)
-- `src/assets/logo-stacked.png.asset.json`
-- (verificar se há outros usados em Hero, About, etc.)
+3. **Publicar o site na Vercel** (você precisa fazer o deploy para a tag ficar visível no domínio real — sem isso o Google não consegue verificar).
 
-## Solução
+4. **Chamar a API de verificação** do Google confirmando que a tag está presente em `https://www.doutorambiental.com.br/`.
 
-Baixar os binários do CDN da Lovable e servir localmente pela Vercel:
+5. **Adicionar a propriedade ao Search Console** (PUT em `/sites/...`) para aparecer na lista de propriedades da sua conta.
 
-1. Para cada `.asset.json`, baixar o PNG real da URL absoluta (`https://<preview>.lovable.app/__l5e/...`) para `public/assets/` no repositório.
-2. Substituir os imports `import logo from "@/assets/logo-horizontal.png.asset.json"` + `logo.url` por caminho estático `"/assets/logo-horizontal.png"` (ou import direto via Vite `import logo from "@/assets/logo-horizontal.png"`).
-3. Remover os arquivos `.asset.json` (opcional — podem ficar sem uso, mas é mais limpo remover).
+6. **Submeter o sitemap** `https://www.doutorambiental.com.br/sitemap.xml` ao GSC.
 
-## Impacto
+7. **Rodar URL Inspection** na home para confirmar que está indexável e reportar status atual (cobertura, mobile, rich results).
 
-- **No Lovable**: continua funcionando (arquivos servidos via `/public` pelo Vite).
-- **Na Vercel**: passa a funcionar (arquivos incluídos no build estático).
-- **Componentes alterados**: `SiteHeader.tsx` e qualquer outro que referencie `.asset.json`.
+8. **Rerodar o scan de SEO** no Lovable e passar pelos findings restantes com dados reais do GSC em mãos.
 
-## Verificação
-
-Após implementar, checar via `rg "asset.json"` que não restou referência, e listar `public/assets/` para confirmar os binários.
+## Observações
+- A meta tag de verificação precisa estar no HTML entregue pelo domínio final (www.doutorambiental.com.br), não só no preview Lovable. Então entre o passo 2 e 4 você faz o deploy na Vercel.
+- Se o domínio já estiver verificado por outro método (ex.: DNS), pulamos direto ao passo 5.
