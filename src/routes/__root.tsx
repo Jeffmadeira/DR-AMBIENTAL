@@ -80,6 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Doutor Ambiental — Controle de Pragas em Sorocaba" },
       { name: "description", content: "Dedetização, desratização e controle de pragas em Sorocaba e região. Equipe especializada e produtos seguros para família e pets." },
       { name: "author", content: "Doutor Ambiental" },
+      { name: "google-site-verification", content: "ev4e2YDPC5D82NVINF_QwavwckSg8JkrM4TWKMV3Z8c" },
       { property: "og:title", content: "Doutor Ambiental — O Especialista no Controle de Pragas" },
       { property: "og:description", content: "Proteção contra pragas e prevenção contínua para casas e empresas em Sorocaba e região." },
       { property: "og:type", content: "website" },
