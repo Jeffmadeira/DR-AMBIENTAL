@@ -1,16 +1,14 @@
-# Favicon da Doutor Ambiental
+# Favicon com o escudo original
 
 ## O que foi constatado
-- O site não tem favicon configurado em `src/routes/__root.tsx`.
-- A pasta `public/` não contém nenhum arquivo de favicon.
-- Existem logos da marca em `public/assets/logo-horizontal.png` e `public/assets/logo-stacked.png`.
+- Você enviou a imagem original do logo (`STORY_copy.jpg`) e quer usar apenas o escudo com a máscara de gás como favicon.
+- O favicon atual em `public/favicon.png` foi gerado artificialmente; será substituído por uma versão recortada do logo original.
 
 ## Plano
-1. **Gerar favicon** — Criar uma versão quadrada e legível do escudo da marca (máscara de gás com shield), otimizada para 32px/16px, usando a identidade visual verde-escuro e dourada existente.
-2. **Salvar em `public/`** — Colocar o arquivo como `public/favicon.png` para servir diretamente na raiz do site.
-3. **Referenciar no `<head>`** — Adicionar `{ rel: "icon", type: "image/png", href: "/favicon.png" }` ao array `links` do `head()` em `src/routes/__root.tsx`.
-4. **Verificar build** — Rodar `bun run build` para garantir que o arquivo é servido corretamente e não há erros.
-5. **Publicar** — Publicar a nova versão para que o favicon apareça no domínio ao vivo.
+1. **Extrair o escudo** — Recortar apenas a parte do escudo/máscara da imagem original `STORY_copy.jpg`, removendo o texto "DOUTOR AMBIENTAL" e demais elementos.
+2. **Formatar como favicon** — Redimensionar para 512x512 px, mantendo proporção e fundo transparente ou cor sólida da marca (#002629), conforme o que ficar melhor.
+3. **Salvar em `public/favicon.png`** — Substituir o arquivo atual.
+4. **Manter a referência no `<head>`** — O link em `src/routes/__root.tsx` continua apontando para `/favicon.png`.
+5. **Build e publicação** — Rodar `bun run build` e publicar para aplicar no site ao vivo.
 
-## Decisão rápida
-Quer que eu gere o favicon a partir do escudo do logo existente, ou prefere enviar um arquivo favicon próprio?
+Quer que eu prossiga com o escudo do logo original como favicon?
