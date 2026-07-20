@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ShieldCheck, Sparkles } from "lucide-react";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -75,6 +76,7 @@ export function Hero() {
               href="https://api.whatsapp.com/send/?phone=5515988420000&text=Ol%C3%A1+Doutor+Ambiental%2C+eu+vim+do+seu+site+e+gostaria+de+um+or%C3%A7amento."
               target="_blank"
               rel="noreferrer"
+              onClick={() => trackWhatsAppClick("hero")}
               className="inline-flex items-center gap-2 bg-gradient-gold text-primary-foreground font-bold px-8 py-4 rounded-full shadow-gold relative overflow-hidden"
             >
               <motion.span

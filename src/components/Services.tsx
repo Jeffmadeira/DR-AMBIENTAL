@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import type { ComponentType, SVGProps } from "react";
+import { trackWhatsAppClick } from "@/lib/analytics";
 import { Rat, Bird, Droplets, SprayCan, ArrowUpRight } from "lucide-react";
 import {
   ScorpionIcon,
@@ -83,6 +84,7 @@ export function Services() {
                   href={waLink(s.title)}
                   target="_blank"
                   rel="noreferrer"
+                  onClick={() => trackWhatsAppClick("service", s.title)}
                   initial={{ opacity: 0, y: 30, scale: 0.9 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   viewport={{ once: true, amount: 0.2, margin: "0px 0px -10% 0px" }}

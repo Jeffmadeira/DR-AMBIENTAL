@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 export function WhatsAppFab() {
   return (
@@ -8,6 +9,7 @@ export function WhatsAppFab() {
       target="_blank"
       rel="noreferrer"
       aria-label="WhatsApp"
+      onClick={() => trackWhatsAppClick("fab")}
       initial={{ scale: 0, opacity: 0, rotate: -180 }}
       animate={{ scale: 1, opacity: 1, rotate: 0 }}
       transition={{ delay: 1.2, type: "spring", stiffness: 200, damping: 14 }}
