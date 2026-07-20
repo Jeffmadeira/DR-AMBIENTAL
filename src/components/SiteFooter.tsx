@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react";
+import { trackWhatsAppClick } from "@/lib/analytics";
 const logoHorizontal = { url: "/assets/logo-horizontal.png" };
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import type { ComponentType, SVGProps } from "react";
+import { trackWhatsAppClick } from "@/lib/analytics";
 import { Rat, Bird, Droplets, SprayCan, ArrowUpRight } from "lucide-react";
 import {
   ScorpionIcon,

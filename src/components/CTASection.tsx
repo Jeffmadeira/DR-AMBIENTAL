@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import shield from "@/assets/shield.png";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
