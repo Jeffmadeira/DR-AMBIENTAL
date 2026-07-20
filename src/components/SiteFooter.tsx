@@ -29,7 +29,14 @@ export function SiteFooter() {
             <ul className="space-y-3 text-sm text-foreground/75">
               <li className="flex items-center gap-3">
                 <WhatsAppIcon className="size-4 text-gold" />
-                <a href="tel:15988420000">(15) 98842-0000</a>
+                <a
+                  href="https://api.whatsapp.com/send/?phone=5515988420000&text=Ol%C3%A1+Doutor+Ambiental%2C+eu+vim+do+seu+site+e+gostaria+de+um+or%C3%A7amento."
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => trackWhatsAppClick("footer")}
+                >
+                  (15) 98842-0000
+                </a>
               </li>
               <li className="flex items-center gap-3"><Mail className="size-4 text-gold" /><a href="mailto:comercial@doutorambiental.com.br">comercial@doutorambiental.com.br</a></li>
             </ul>

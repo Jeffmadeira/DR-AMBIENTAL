@@ -39,6 +39,7 @@ export function CTASection() {
               href="https://api.whatsapp.com/send/?phone=5515988420000&text=Ol%C3%A1+Doutor+Ambiental%2C+eu+vim+do+seu+site+e+gostaria+de+um+or%C3%A7amento."
               target="_blank"
               rel="noreferrer"
+              onClick={() => trackWhatsAppClick("cta")}
               whileHover={{ scale: 1.08, y: -3 }}
               whileTap={{ scale: 0.95 }}
               animate={{ boxShadow: ["0 10px 30px -10px rgba(212,175,55,0.4)", "0 14px 40px -8px rgba(212,175,55,0.7)", "0 10px 30px -10px rgba(212,175,55,0.4)"] }}
