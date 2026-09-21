@@ -2,22 +2,38 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Plus } from "lucide-react";
 import { useState } from "react";
 
-const faqs = [
+export const faqs = [
   {
-    q: "Os serviços da Doutor Ambiental são acessíveis para o meu orçamento?",
-    a: "Sim. Oferecemos preços tabelados e acessíveis, além de opções de pagamento facilitadas para atender às necessidades de nossos clientes.",
+    q: "O serviço é seguro para crianças e animais de estimação?",
+    a: "Sim. Trabalhamos com produtos registrados e aplicados por profissionais treinados, em dosagens e métodos definidos para cada ambiente. Antes do serviço, a equipe orienta sobre as precauções específicas do tratamento escolhido.",
   },
   {
-    q: "Terei que sair do local durante a dedetização?",
-    a: "Dependendo do tipo de infestação e do método utilizado, pode ser necessário deixar o local por um curto período. Nossa equipe irá orientá-lo sobre quaisquer precauções necessárias.",
+    q: "Preciso sair do ambiente durante o tratamento?",
+    a: "Depende do tipo de tratamento e do nível de infestação. Em muitos casos a permanência é possível; em outros, indicamos um período de ausência. Essa orientação é dada na inspeção, antes da execução.",
   },
   {
-    q: "Existe risco de reinfestação após o serviço?",
-    a: "Nossos métodos garantem proteção duradoura. Em casos raros de reinfestação, oferecemos serviços adicionais conforme necessário.",
+    q: "Uma aplicação é suficiente para eliminar a infestação?",
+    a: "Nem sempre. Infestações consolidadas envolvem ciclos de reprodução e focos ocultos. Por isso avaliamos o ambiente e, quando necessário, definimos reforços ou um programa de controle com acompanhamento.",
   },
   {
-    q: "Como agendar o serviço se tenho uma agenda lotada?",
-    a: "Entendemos que seu tempo é valioso. Oferecemos flexibilidade de horários e agendamento conveniente para atender às suas necessidades.",
+    q: "Como vocês identificam a origem do problema?",
+    a: "Através da inspeção técnica: procuramos sinais, abrigos, pontos de acesso, fontes de água e alimento e condições estruturais que favorecem a praga. O diagnóstico define a estratégia, não o contrário.",
+  },
+  {
+    q: "Vocês atendem empresas e condomínios?",
+    a: "Sim. Atendemos residências, comércios, condomínios, indústrias e empresas do setor alimentício, com estratégias adequadas ao porte e às exigências de cada operação.",
+  },
+  {
+    q: "Trabalham com contratos recorrentes?",
+    a: "Sim. Para operações que precisam de continuidade, estruturamos programas de controle periódico com cronograma, registros e acompanhamento dos resultados.",
+  },
+  {
+    q: "Vocês emitem documentação do serviço?",
+    a: "Sim. Emitimos a documentação do serviço executado, incluindo os registros necessários para fiscalização e auditorias, conforme o tipo de operação atendida.",
+  },
+  {
+    q: "O que define o valor do controle de pragas?",
+    a: "O valor é definido pelo diagnóstico: tipo de praga, nível de infestação, área, características do ambiente e necessidade de acompanhamento. Por isso a avaliação técnica vem antes da proposta.",
   },
 ];
 
