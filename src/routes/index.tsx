@@ -1,10 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Hero } from "@/components/Hero";
+import { Problem } from "@/components/Problem";
 import { Services } from "@/components/Services";
 import { Differentials } from "@/components/Differentials";
 import { About } from "@/components/About";
-import { FAQ } from "@/components/FAQ";
+import { Segments } from "@/components/Segments";
+import { FAQ, faqs } from "@/components/FAQ";
 import { CTASection } from "@/components/CTASection";
 import { SiteFooter } from "@/components/SiteFooter";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
