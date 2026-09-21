@@ -16,40 +16,11 @@ const SITE_URL = "https://www.doutorambiental.com.br";
 const faqLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Os serviços da Doutor Ambiental são acessíveis para o meu orçamento?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Sim. Oferecemos preços tabelados e acessíveis, além de opções de pagamento facilitadas para atender às necessidades de nossos clientes.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Terei que sair do local durante a dedetização?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Dependendo do tipo de infestação e do método utilizado, pode ser necessário deixar o local por um curto período. Nossa equipe irá orientá-lo sobre quaisquer precauções necessárias.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Existe risco de reinfestação após o serviço?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Nossos métodos garantem proteção duradoura. Em casos raros de reinfestação, oferecemos serviços adicionais conforme necessário.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Como agendar o serviço se tenho uma agenda lotada?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Entendemos que seu tempo é valioso. Oferecemos flexibilidade de horários e agendamento conveniente para atender às suas necessidades.",
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 
 const localBusinessLd = {
