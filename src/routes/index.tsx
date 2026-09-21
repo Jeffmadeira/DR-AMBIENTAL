@@ -75,6 +75,9 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "Proteção contra pragas e prevenção contínua para casas e empresas em Sorocaba e região." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL + "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Doutor Ambiental — Controle de Pragas em Sorocaba" },
+      { name: "twitter:description", content: "Dedetização, desratização e controle de pragas em Sorocaba e região com orçamento gratuito." },
     ],
     links: [{ rel: "canonical", href: SITE_URL + "/" }],
     scripts: [
