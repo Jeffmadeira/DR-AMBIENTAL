@@ -1,4 +1,12 @@
-type TrackingLocation = "hero" | "fab" | "service" | "footer" | "cta";
+type TrackingLocation =
+  | "hero"
+  | "fab"
+  | "service"
+  | "footer"
+  | "cta"
+  | "empresas"
+  | "residencias"
+  | "segmento";
 
 declare global {
   interface Window {
