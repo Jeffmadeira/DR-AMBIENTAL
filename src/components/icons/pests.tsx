@@ -141,3 +141,51 @@ export const BatIcon = (props: IconProps) => (
     <path d="M12 10c2 1 3 0 4-1s2-1 3 0c0 2-1 4-3 5-1 .5-2 0-2.5-1-.5 1-1 2-1.5 2" />
   </svg>
 );
+
+export const MosquitoIcon = (props: IconProps) => (
+  <svg {...base(props)}>
+    <path d="M12 6v12" />
+    <path d="M12 9 8 5M12 9l4-4" />
+    <path d="M12 11 7 10M12 11l5-1" />
+    <path d="M12 14 8 17M12 14l4 3" />
+    <path d="M12 18l-2 3M12 18l2 3" />
+    <path d="M13 7h5" />
+    <path d="M18 7l2-2" />
+    <ellipse cx="12" cy="11.5" rx="1.6" ry="3.2" />
+  </svg>
+);
+
+export const MothIcon = (props: IconProps) => (
+  <svg {...base(props)}>
+    <path d="M12 8v10" />
+    <circle cx="12" cy="6.5" r="1.3" />
+    <path d="M10.8 5.6 9 3.5M13.2 5.6 15 3.5" />
+    <path d="M11.5 9C8 5.5 4.5 6.5 3 10c1.5 1 4.5 1.5 8.5 0" />
+    <path d="M12.5 9c3.5-3.5 7-2.5 8.5 1-1.5 1-4.5 1.5-8.5 0" />
+    <path d="M11.5 12C8 15.5 6 18.5 6 21c2.5-.5 4.5-2 5.5-5" />
+    <path d="M12.5 12c3.5 3.5 5.5 6.5 5.5 9-2.5-.5-4.5-2-5.5-5" />
+  </svg>
+);
+
+export const WoodBorerIcon = (props: IconProps) => (
+  <svg {...base(props)}>
+    <path d="M5 20V4h14v16" />
+    <path d="M8 4c1 2 1 4 0 6s-1 4 0 6" />
+    <path d="M16 4c-1 2-1 4 0 6s1 4 0 6" />
+    <circle cx="12" cy="8" r="1.2" />
+    <circle cx="10" cy="14" r="0.9" />
+    <circle cx="15" cy="16" r="0.8" />
+  </svg>
+);
+
+export const WaspIcon = (props: IconProps) => (
+  <svg {...base(props)}>
+    <ellipse cx="12" cy="12" rx="2.3" ry="4.2" />
+    <path d="M10.2 10h3.6M10 12h4M10.3 14h3.4" />
+    <circle cx="12" cy="7" r="1.5" />
+    <path d="M11 5.8 9.5 4M13 5.8 14.5 4" />
+    <path d="M10 10c-3.5-3-6.5-2-7.5.5 2 1 5 1 7.5-.5Z" />
+    <path d="M14 10c3.5-3 6.5-2 7.5.5-2 1-5 1-7.5-.5Z" />
+    <path d="M12 16v3l1.5 2" />
+  </svg>
+);
