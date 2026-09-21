@@ -27,8 +27,10 @@ const localBusinessLd = {
   "@context": "https://schema.org",
   "@type": "PestControlService",
   name: "Doutor Ambiental",
-  description: "Controle de pragas, dedetização e desratização em Sorocaba e região.",
+  description:
+    "Controle de pragas, dedetização e desratização em Sorocaba e região, com o respaldo da Ártica Saúde Ambiental — 9 anos de mercado e certificação ISO 9001.",
   url: SITE_URL,
+  parentOrganization: { "@type": "Organization", name: "Ártica Saúde Ambiental" },
   telephone: "+55-15-98842-0000",
   areaServed: "Sorocaba e região",
   address: {
@@ -43,14 +45,14 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Doutor Ambiental — Controle de Pragas em Sorocaba" },
-      { name: "description", content: "Dedetização, desratização e controle de pragas em Sorocaba e região. Equipe especializada, produtos seguros para família e pets. Orçamento gratuito." },
-      { property: "og:title", content: "Doutor Ambiental — O Especialista no Controle de Pragas" },
-      { property: "og:description", content: "Proteção contra pragas e prevenção contínua para casas e empresas em Sorocaba e região." },
+      { name: "description", content: "Controle de pragas em Sorocaba e região para residências, comércios, condomínios e indústrias. Respaldo da Ártica Saúde Ambiental: 9 anos de mercado, +150 condomínios e ISO 9001." },
+      { property: "og:title", content: "Doutor Ambiental — Controle de Pragas em Sorocaba e Região" },
+      { property: "og:description", content: "Estrutura local, experiência nacional: inspeção, diagnóstico e controle de pragas com o respaldo da Ártica Saúde Ambiental." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL + "/" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Doutor Ambiental — Controle de Pragas em Sorocaba" },
-      { name: "twitter:description", content: "Dedetização, desratização e controle de pragas em Sorocaba e região com orçamento gratuito." },
+      { name: "twitter:description", content: "Controle técnico de pragas para residências, comércios e indústrias, com o respaldo da Ártica Saúde Ambiental." },
     ],
     links: [{ rel: "canonical", href: SITE_URL + "/" }],
     scripts: [
@@ -67,9 +69,11 @@ function Index() {
       <SiteHeader />
       <main>
         <Hero />
+        <Problem />
         <Services />
-        <Differentials />
         <About />
+        <Differentials />
+        <Segments />
         <FAQ />
         <CTASection />
       </main>
