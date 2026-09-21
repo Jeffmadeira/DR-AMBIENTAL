@@ -411,7 +411,7 @@ export function Services() {
                         <h3 className="font-display text-base text-foreground leading-tight mb-1.5 line-clamp-2 min-h-[2.5rem]">
                           {s.title}
                         </h3>
-                        <p className="text-xs text-foreground/65 leading-relaxed line-clamp-2 min-h-[2rem]">
+                        <p className="text-xs text-foreground/65 leading-relaxed line-clamp-2 group-open:line-clamp-none min-h-[2rem]">
                           {s.desc}
                         </p>
                       </div>
