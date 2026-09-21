@@ -19,7 +19,8 @@ export function SiteFooter() {
             className="h-14 w-auto object-contain"
           />
           <p className="text-sm text-foreground/65 leading-relaxed mt-4 max-w-md">
-            Especialistas em controle de pragas em Sorocaba e região. Empresa do Grupo Ártica Saúde Ambiental.
+            Controle de pragas em Sorocaba e região, com o respaldo da Ártica Saúde Ambiental — 9 anos de mercado,
+            certificação ISO 9001 e experiência em indústrias, condomínios e órgãos públicos.
           </p>
         </div>
 

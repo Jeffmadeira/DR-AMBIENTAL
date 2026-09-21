@@ -28,12 +28,13 @@ export function CTASection() {
             className="absolute -right-20 -top-10 w-80 opacity-20 pointer-events-none"
           />
           <div className="relative">
-            <div className="text-xs uppercase tracking-[0.3em] text-gold mb-4">Sua casa livre de pragas</div>
+            <div className="text-xs uppercase tracking-[0.3em] text-gold mb-4">Não espere o problema crescer</div>
             <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl mb-5">
-              Sua saúde em <span className="text-gradient-gold">primeiro lugar</span>
+              Viu uma praga? <span className="text-gradient-gold">Aja agora.</span>
             </h2>
             <p className="text-foreground/75 max-w-xl mx-auto mb-8">
-              Fale agora com um especialista e receba seu orçamento gratuito em poucos minutos.
+              Quanto antes o problema for identificado, mais simples tende a ser o controle. Fale com a equipe da Doutor
+              Ambiental e descubra a estratégia mais adequada para o seu ambiente.
             </p>
             <motion.a
               href="https://api.whatsapp.com/send/?phone=5515988420000&text=Ol%C3%A1+Doutor+Ambiental%2C+eu+vim+do+seu+site+e+gostaria+de+um+or%C3%A7amento."
@@ -53,7 +54,7 @@ export function CTASection() {
                 className="absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12"
               />
               <WhatsAppIcon className="size-5 relative" />
-              <span className="relative">Solicitar orçamento gratuito</span>
+              <span className="relative">Quero falar com um especialista</span>
             </motion.a>
           </div>
         </motion.div>

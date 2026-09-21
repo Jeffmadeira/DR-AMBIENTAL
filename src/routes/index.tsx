@@ -1,10 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Hero } from "@/components/Hero";
+import { Problem } from "@/components/Problem";
 import { Services } from "@/components/Services";
 import { Differentials } from "@/components/Differentials";
 import { About } from "@/components/About";
-import { FAQ } from "@/components/FAQ";
+import { Segments } from "@/components/Segments";
+import { FAQ, faqs } from "@/components/FAQ";
 import { CTASection } from "@/components/CTASection";
 import { SiteFooter } from "@/components/SiteFooter";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
@@ -14,48 +16,21 @@ const SITE_URL = "https://www.doutorambiental.com.br";
 const faqLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Os serviços da Doutor Ambiental são acessíveis para o meu orçamento?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Sim. Oferecemos preços tabelados e acessíveis, além de opções de pagamento facilitadas para atender às necessidades de nossos clientes.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Terei que sair do local durante a dedetização?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Dependendo do tipo de infestação e do método utilizado, pode ser necessário deixar o local por um curto período. Nossa equipe irá orientá-lo sobre quaisquer precauções necessárias.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Existe risco de reinfestação após o serviço?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Nossos métodos garantem proteção duradoura. Em casos raros de reinfestação, oferecemos serviços adicionais conforme necessário.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Como agendar o serviço se tenho uma agenda lotada?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Entendemos que seu tempo é valioso. Oferecemos flexibilidade de horários e agendamento conveniente para atender às suas necessidades.",
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 
 const localBusinessLd = {
   "@context": "https://schema.org",
   "@type": "PestControlService",
   name: "Doutor Ambiental",
-  description: "Controle de pragas, dedetização e desratização em Sorocaba e região.",
+  description:
+    "Controle de pragas, dedetização e desratização em Sorocaba e região, com o respaldo da Ártica Saúde Ambiental — 9 anos de mercado e certificação ISO 9001.",
   url: SITE_URL,
+  parentOrganization: { "@type": "Organization", name: "Ártica Saúde Ambiental" },
   telephone: "+55-15-98842-0000",
   areaServed: "Sorocaba e região",
   address: {
@@ -70,14 +45,14 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Doutor Ambiental — Controle de Pragas em Sorocaba" },
-      { name: "description", content: "Dedetização, desratização e controle de pragas em Sorocaba e região. Equipe especializada, produtos seguros para família e pets. Orçamento gratuito." },
-      { property: "og:title", content: "Doutor Ambiental — O Especialista no Controle de Pragas" },
-      { property: "og:description", content: "Proteção contra pragas e prevenção contínua para casas e empresas em Sorocaba e região." },
+      { name: "description", content: "Controle de pragas em Sorocaba e região para residências, comércios, condomínios e indústrias. Respaldo da Ártica Saúde Ambiental: 9 anos de mercado, +150 condomínios e ISO 9001." },
+      { property: "og:title", content: "Doutor Ambiental — Controle de Pragas em Sorocaba e Região" },
+      { property: "og:description", content: "Estrutura local, experiência nacional: inspeção, diagnóstico e controle de pragas com o respaldo da Ártica Saúde Ambiental." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL + "/" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Doutor Ambiental — Controle de Pragas em Sorocaba" },
-      { name: "twitter:description", content: "Dedetização, desratização e controle de pragas em Sorocaba e região com orçamento gratuito." },
+      { name: "twitter:description", content: "Controle técnico de pragas para residências, comércios e indústrias, com o respaldo da Ártica Saúde Ambiental." },
     ],
     links: [{ rel: "canonical", href: SITE_URL + "/" }],
     scripts: [
@@ -94,9 +69,11 @@ function Index() {
       <SiteHeader />
       <main>
         <Hero />
+        <Problem />
         <Services />
-        <Differentials />
         <About />
+        <Differentials />
+        <Segments />
         <FAQ />
         <CTASection />
       </main>
