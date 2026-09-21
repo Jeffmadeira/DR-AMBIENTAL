@@ -408,10 +408,10 @@ export function Services() {
                         />
                       </motion.div>
                       <div className="min-w-0 flex-1 text-left">
-                        <h3 className="font-display text-base text-foreground leading-tight mb-1.5">
+                        <h3 className="font-display text-base text-foreground leading-tight mb-1.5 line-clamp-2 min-h-[2.5rem]">
                           {s.title}
                         </h3>
-                        <p className="text-xs text-foreground/65 leading-relaxed">
+                        <p className="text-xs text-foreground/65 leading-relaxed line-clamp-2 min-h-[2rem]">
                           {s.desc}
                         </p>
                       </div>
