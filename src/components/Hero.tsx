@@ -60,7 +60,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="mt-6 text-lg text-foreground/75 max-w-xl leading-relaxed"
           >
-            Proteção contra pragas e prevenção contínua para manter sua casa ou seu negócio sempre seguro — com produtos seguros para família e pets.
+            A Doutor Ambiental chega a Sorocaba com o respaldo da <span className="text-gold font-semibold">Ártica Saúde Ambiental</span>, grupo com 9 anos de atuação no controle de pragas e experiência em grandes operações em todo o Brasil. Controle técnico, seguro e estratégico para residências, comércios e empresas.
           </motion.p>
 
           <motion.div
@@ -103,11 +103,15 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="mt-12 flex items-center gap-6 text-xs text-foreground/60 uppercase tracking-widest"
+            className="mt-12 flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] text-foreground/60 uppercase tracking-widest"
           >
-            <div className="flex items-center gap-2"><ShieldCheck className="size-4 text-gold" /> Certificada</div>
+            <div className="flex items-center gap-2"><ShieldCheck className="size-4 text-gold" /> ISO 9001</div>
             <div className="h-4 w-px bg-border" />
-            <div>Grupo Ártica Saúde Ambiental</div>
+            <div>+150 condomínios</div>
+            <div className="h-4 w-px bg-border" />
+            <div>Indústria alimentícia</div>
+            <div className="h-4 w-px bg-border" />
+            <div>Prefeituras e órgãos públicos</div>
           </motion.div>
         </div>
 
@@ -136,8 +140,8 @@ export function Hero() {
               transition={{ delay: 0.9, type: "spring", stiffness: 200, damping: 18 }}
               className="absolute bottom-6 left-6 right-6 bg-forest-deep/80 backdrop-blur-md border border-gold/30 rounded-2xl p-4"
             >
-              <div className="text-[10px] uppercase tracking-[0.2em] text-gold">Profissionais certificados</div>
-              <div className="font-display text-xl mt-1">Equipe especializada</div>
+              <div className="text-[10px] uppercase tracking-[0.2em] text-gold">Respaldo Ártica Saúde Ambiental</div>
+              <div className="font-display text-xl mt-1">9 anos de operação nacional</div>
             </motion.div>
           </motion.div>
         </motion.div>
