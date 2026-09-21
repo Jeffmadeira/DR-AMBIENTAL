@@ -7,7 +7,7 @@ Mensagem central: "A empresa é nova em Sorocaba, mas a experiência por trás d
 ## O que muda em cada seção
 
 **1. Topo (Hero) — ajuste de texto**
-- Título passa a "Controle de pragas em Sorocaba e região" com destaque dourado em "controle".
+- O título principal permanece exatamente como está: "Livre-se das pragas de uma vez por todas".
 - Subtítulo assume o lastro: chegada a Sorocaba com respaldo da Ártica Saúde Ambiental, 9 anos de mercado e operações em todo o Brasil.
 - A linha de selos abaixo dos botões (hoje "Certificada / Grupo Ártica") vira uma faixa de provas curtas: +150 condomínios · Indústria alimentícia · Prefeituras · ISO 9001.
 - O cartão sobre a foto troca "Equipe especializada" por uma prova concreta (ex.: "9 anos de operação nacional").
