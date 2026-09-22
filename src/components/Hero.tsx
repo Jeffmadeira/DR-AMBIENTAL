@@ -58,9 +58,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="mt-6 text-lg text-foreground/75 max-w-xl leading-relaxed"
+            className="mt-6 text-lg text-foreground/75 max-w-xl leading-relaxed whitespace-pre-line"
           >
-            Estrutura local em Sorocaba com o respaldo da <span className="text-gold font-semibold">Ártica Saúde Ambiental</span> — 9 anos de operação nacional.
+            {`Uma solução definitiva contra as pragas com a experiência do\nGrupo\u00a0Ártica Saúde Ambiental\n\n`}
           </motion.p>
 
           <motion.div
@@ -150,7 +150,7 @@ export function Hero() {
               transition={{ delay: 0.9, type: "spring", stiffness: 200, damping: 18 }}
               className="absolute bottom-6 left-6 right-6 bg-forest-deep/80 backdrop-blur-md border border-gold/30 rounded-2xl p-4"
             >
-              <div className="text-[10px] uppercase tracking-[0.2em] text-gold">Respaldo Ártica Saúde Ambiental</div>
+              <div className="text-[10px] uppercase tracking-[0.2em] text-gold">EMPRESA DO GRUPO ÁRTICA SAÚDE AMBIENTAL</div>
               <div className="font-display text-xl mt-1">9 anos de operação nacional</div>
             </motion.div>
           </motion.div>
