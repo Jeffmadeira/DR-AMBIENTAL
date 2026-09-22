@@ -353,7 +353,7 @@ const waLink = (title: string) =>
 
 export function Services() {
   return (
-    <section id="servicos" className="relative py-16 bg-forest-deep">
+    <section id="servicos" className="relative py-10 bg-forest-deep">
       <div className="max-w-7xl mx-auto px-5 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

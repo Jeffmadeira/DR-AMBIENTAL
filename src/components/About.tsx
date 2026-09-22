@@ -19,7 +19,7 @@ const segments = [
 
 export function About() {
   return (
-    <section id="sobre" className="py-16 bg-forest-deep relative overflow-hidden">
+    <section id="sobre" className="py-10 bg-forest-deep relative overflow-hidden">
       <div className="absolute top-1/2 -right-40 w-[500px] h-[500px] rounded-full bg-gold/10 blur-[140px]" />
       <div className="relative max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
         <motion.div

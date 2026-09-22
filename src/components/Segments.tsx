@@ -13,7 +13,7 @@ const wa = (text: string) => `https://api.whatsapp.com/send/?phone=${PHONE}&text
 
 export function Segments() {
   return (
-    <section id="publicos" className="py-16 bg-forest-deep relative overflow-hidden">
+    <section id="publicos" className="py-10 bg-forest-deep relative overflow-hidden">
       <div className="absolute -right-40 bottom-0 w-[460px] h-[460px] rounded-full bg-gold/10 blur-[150px]" aria-hidden />
       <div className="relative max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-6">
         <motion.div

@@ -27,7 +27,7 @@ const differentials = [
 
 export function Overview() {
   return (
-    <section id="como-funciona" className="py-12 sm:py-16 bg-background relative overflow-hidden">
+    <section id="como-funciona" className="py-8 sm:py-10 bg-background relative overflow-hidden">
       <div className="absolute -right-32 top-0 w-[360px] h-[360px] rounded-full bg-gold/10 blur-[120px]" aria-hidden />
       <div className="relative max-w-7xl mx-auto px-5 lg:px-8">
         {/* Heading */}
