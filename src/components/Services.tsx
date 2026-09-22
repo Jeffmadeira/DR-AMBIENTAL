@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import type { ComponentType, SVGProps } from "react";
 import { trackWhatsAppClick } from "@/lib/analytics";
-import { ArrowUpRight, Bird, Building, ChevronDown, Droplets, Factory, Home, MessageCircle, Rat, SprayCan, Store } from "lucide-react";
+import { ArrowUpRight, Bird, ChevronDown, Droplets, MessageCircle, Rat, SprayCan } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   ScorpionIcon,
@@ -350,17 +350,6 @@ const waLink = (title: string) =>
     `Olá! Gostaria de um orçamento para ${title}.`,
   )}`;
 
-const environments = [
-  { icon: Home, title: "Residências", desc: "Proteção contra baratas, formigas, ratos, cupins, escorpiões, pulgas, percevejos e outras pragas." },
-  { icon: Store, title: "Comércios", desc: "Controle planejado para proteger clientes, funcionários, estoque e a operação do seu negócio." },
-  { icon: Building, title: "Condomínios", desc: "Estratégias para áreas comuns e unidades, de acordo com as características de cada empreendimento." },
-  { icon: Factory, title: "Empresas e Indústrias", desc: "Programas de controle e prevenção para operações que exigem segurança, acompanhamento e continuidade." },
-];
-
-const waEnvironment = (title: string) =>
-  `https://api.whatsapp.com/send/?phone=${WHATSAPP_PHONE}&text=${encodeURIComponent(
-    `Olá! Gostaria de falar sobre controle de pragas para ${title}.`,
-  )}`;
 
 export function Services() {
   return (
@@ -371,56 +360,12 @@ export function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="max-w-2xl mb-12"
+          className="max-w-2xl mb-8"
         >
           <div className="text-xs uppercase tracking-[0.3em] text-gold mb-3">Nossos serviços</div>
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-foreground">
-            Controle de pragas para <span className="text-gradient-gold">cada tipo de ambiente</span>
-          </h2>
-        </motion.div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
-          {environments.map((e, i) => {
-            const Icon = e.icon;
-            return (
-              <motion.a
-                key={e.title}
-                href={waEnvironment(e.title)}
-                target="_blank"
-                rel="noreferrer"
-                onClick={() => trackWhatsAppClick("segmento", e.title)}
-                initial={{ opacity: 0, y: 40, scale: 0.92 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.55, delay: i * 0.08, type: "spring", stiffness: 140, damping: 16 }}
-                whileHover={{ y: -6 }}
-                whileTap={{ scale: 0.98 }}
-                className="group rounded-2xl border border-gold/25 bg-card/40 backdrop-blur p-5 flex flex-col h-full hover:border-gold/60 transition-colors"
-              >
-                <div className="size-11 rounded-xl bg-gradient-gold flex items-center justify-center shadow-gold mb-4">
-                  <Icon className="size-5 text-primary-foreground" />
-                </div>
-                <h3 className="font-display text-lg mb-1.5">{e.title}</h3>
-                <p className="text-sm text-foreground/65 leading-relaxed">{e.desc}</p>
-                <span className="mt-4 inline-flex items-center gap-1 text-xs text-gold font-semibold">
-                  Falar com um especialista <ArrowUpRight className="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </span>
-              </motion.a>
-            );
-          })}
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="max-w-2xl mb-8"
-        >
-          <div className="text-xs uppercase tracking-[0.3em] text-gold mb-3">Pragas que controlamos</div>
-          <h3 className="font-display text-3xl sm:text-4xl text-foreground">
             Soluções completas em <span className="text-gradient-gold">controle de pragas</span>
-          </h3>
+          </h2>
         </motion.div>
 
 
