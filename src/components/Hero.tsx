@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { trackWhatsAppClick } from "@/lib/analytics";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
