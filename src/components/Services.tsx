@@ -36,7 +36,7 @@ type Service = {
 const services: Service[] = [
   {
     icon: ScorpionIcon,
-    title: "Controle de Escorpiões",
+    title: "Escorpiões",
     desc: "Manejo integrado para escorpião-amarelo e escorpião-marrom.",
     featured: true,
     details: [
@@ -113,7 +113,7 @@ const services: Service[] = [
   },
   {
     icon: SpiderIcon,
-    title: "Controle de Aranhas",
+    title: "Aranhas",
     desc: "Tratamento preventivo em cantos, rodapés, beirais e garagens.",
     details: [
       {
@@ -128,7 +128,7 @@ const services: Service[] = [
   },
   {
     icon: BedbugIcon,
-    title: "Controle de Percevejos",
+    title: "Percevejos",
     desc: "Tratamento completo em colchões, estrados e estofados.",
     details: [
       {
@@ -147,7 +147,7 @@ const services: Service[] = [
   },
   {
     icon: FlyIcon,
-    title: "Controle de Moscas",
+    title: "Moscas",
     desc: "Barreira sanitária para cozinhas, empresas e áreas externas.",
     details: [
       {
@@ -166,7 +166,7 @@ const services: Service[] = [
   },
   {
     icon: MosquitoIcon,
-    title: "Controle de Mosquitos e Pernilongos",
+    title: "Mosquitos e Pernilongos",
     desc: "Controle de Aedes aegypti, Culex e focos de reprodução.",
     details: [
       {
@@ -185,7 +185,7 @@ const services: Service[] = [
   },
   {
     icon: FleaIcon,
-    title: "Controle de Pulgas e Carrapatos",
+    title: "Pulgas e Carrapatos",
     desc: "Eliminação no ambiente, caminhas dos pets, frestas e quintais.",
     details: [
       {
@@ -223,7 +223,7 @@ const services: Service[] = [
   },
   {
     icon: MothIcon,
-    title: "Controle de Traças",
+    title: "Traças",
     desc: "Proteção para armários, estantes, livros, tecidos e documentos.",
     details: [
       {
@@ -261,7 +261,7 @@ const services: Service[] = [
   },
   {
     icon: Bird,
-    title: "Controle de Pombos",
+    title: "Pombos",
     desc: "Manejo integrado, repelência e barreiras sem extermínio.",
     details: [
       {
@@ -299,7 +299,7 @@ const services: Service[] = [
   },
   {
     icon: BatIcon,
-    title: "Controle de Morcegos",
+    title: "Morcegos",
     desc: "Manejo seguro dentro das normas sanitárias e ambientais.",
     details: [
       {
