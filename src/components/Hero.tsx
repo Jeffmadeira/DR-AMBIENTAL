@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { trackWhatsAppClick } from "@/lib/analytics";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -11,7 +11,7 @@ import technician from "@/assets/technician.jpg";
 
 export function Hero() {
   return (
-    <section id="top" className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden noise-overlay">
+    <section id="top" className="relative min-h-screen lg:flex lg:items-center pt-28 pb-16 overflow-hidden noise-overlay">
       {/* gradient ambient */}
       <div className="absolute inset-0 bg-gradient-forest" />
       <motion.div
@@ -60,7 +60,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="mt-6 text-lg text-foreground/75 max-w-xl leading-relaxed"
           >
-            A Doutor Ambiental chega a Sorocaba com o respaldo da <span className="text-gold font-semibold">Ártica Saúde Ambiental</span>, grupo com 9 anos de atuação no controle de pragas e experiência em grandes operações em todo o Brasil. Controle técnico, seguro e estratégico para residências, comércios e empresas.
+            Estrutura local em Sorocaba com o respaldo da <span className="text-gold font-semibold">Ártica Saúde Ambiental</span> — 9 anos de operação nacional.
           </motion.p>
 
           <motion.div
@@ -100,18 +100,28 @@ export function Hero() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="mt-12 flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] text-foreground/60 uppercase tracking-widest"
+            className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl"
           >
-            <div className="flex items-center gap-2"><ShieldCheck className="size-4 text-gold" /> ISO 9001</div>
-            <div className="h-4 w-px bg-border" />
-            <div>+150 condomínios</div>
-            <div className="h-4 w-px bg-border" />
-            <div>Indústria alimentícia</div>
-            <div className="h-4 w-px bg-border" />
-            <div>Prefeituras e órgãos públicos</div>
+            {[
+              { value: "9", label: "Anos de operação" },
+              { value: "+150", label: "Condomínios" },
+              { value: "ISO", label: "9001 certificada" },
+              { value: "100%", label: "Brasil coberto" },
+            ].map((s, i) => (
+              <motion.div
+                key={s.label}
+                initial={{ opacity: 0, y: 16, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ delay: 0.8 + i * 0.1, type: "spring", stiffness: 200, damping: 16 }}
+                className="rounded-2xl border border-gold/30 bg-gold/5 px-3 py-3 text-center"
+              >
+                <div className="font-display text-2xl sm:text-3xl text-gradient-gold leading-none">{s.value}</div>
+                <div className="text-[10px] uppercase tracking-wider text-foreground/60 mt-1.5">{s.label}</div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
 
