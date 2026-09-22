@@ -40,7 +40,7 @@ export function Overview() {
         >
           <div className="text-xs uppercase tracking-[0.3em] text-gold mb-2">Como trabalhamos</div>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-tight text-foreground">
-            Da inspeção ao acompanhamento, <span className="text-gradient-gold">sem achismos</span>
+            Da inspeção ao acompanhamento, <span className="text-gradient-gold">PROBLEMA RESOLVIDO!</span>
           </h2>
         </motion.div>
 
