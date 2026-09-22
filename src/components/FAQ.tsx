@@ -40,13 +40,13 @@ export const faqs = [
 export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="py-28 bg-background">
+    <section id="faq" className="py-10 bg-background">
       <div className="max-w-4xl mx-auto px-5 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-14"
+          className="text-center mb-10"
         >
           <div className="text-xs uppercase tracking-[0.3em] text-gold mb-3">F.A.Q.</div>
           <h2 className="font-display text-4xl sm:text-5xl">Perguntas frequentes</h2>

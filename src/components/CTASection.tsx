@@ -10,7 +10,7 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 
 export function CTASection() {
   return (
-    <section className="py-24 bg-forest-deep relative overflow-hidden">
+    <section className="py-10 bg-forest-deep relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-gold opacity-[0.08]" />
       <div className="max-w-5xl mx-auto px-5 lg:px-8 relative">
         <motion.div

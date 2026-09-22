@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { trackWhatsAppClick } from "@/lib/analytics";
-import { ArrowRight, Check, Search, Stethoscope, Target, SprayCan, LineChart } from "lucide-react";
+import { Check, Search, Stethoscope, Target, SprayCan, LineChart } from "lucide-react";
 
 const WHATSAPP_PHONE = "5515988420000";
 const waEnv = (title: string) =>
@@ -27,7 +27,7 @@ const differentials = [
 
 export function Overview() {
   return (
-    <section id="como-funciona" className="py-16 sm:py-20 bg-background relative overflow-hidden">
+    <section id="como-funciona" className="py-8 sm:py-10 bg-background relative overflow-hidden">
       <div className="absolute -right-32 top-0 w-[360px] h-[360px] rounded-full bg-gold/10 blur-[120px]" aria-hidden />
       <div className="relative max-w-7xl mx-auto px-5 lg:px-8">
         {/* Heading */}
@@ -36,7 +36,7 @@ export function Overview() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, type: "spring", stiffness: 100, damping: 18 }}
-          className="max-w-2xl mb-10"
+          className="max-w-2xl mb-8"
         >
           <div className="text-xs uppercase tracking-[0.3em] text-gold mb-2">Como trabalhamos</div>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-tight text-foreground">
@@ -44,52 +44,68 @@ export function Overview() {
           </h2>
         </motion.div>
 
-        {/* Process — compact horizontal flow */}
-        <motion.ol
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col sm:flex-row sm:items-stretch gap-1 sm:gap-0 mb-12"
-        >
-          {steps.map((s, i) => {
-            const Icon = s.icon;
-            return (
-              <motion.li
-                key={s.title}
-                initial={{ opacity: 0, x: -15 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="flex items-start gap-3 sm:flex-1 sm:flex-col sm:gap-2 sm:items-start"
-              >
-                <div className="flex items-center gap-3 sm:flex-col sm:items-center sm:text-center">
-                  <span className="font-display text-2xl text-gold/50 leading-none shrink-0 sm:text-3xl">
-                    {i + 1}
-                  </span>
-                  <div className="size-8 rounded-lg bg-gradient-gold flex items-center justify-center shadow-gold shrink-0">
-                    <Icon className="size-4 text-primary-foreground" />
+        {/* Timeline */}
+        <div className="relative mb-10">
+          {/* Desktop: horizontal connecting line */}
+          <div className="hidden sm:block absolute top-7 left-[10%] right-[10%] h-0.5 bg-border overflow-hidden rounded-full">
+            <motion.div
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
+              className="h-full bg-gradient-gold origin-left"
+            />
+          </div>
+
+          {/* Mobile: vertical connecting line */}
+          <div className="sm:hidden absolute left-[27px] top-2 bottom-2 w-0.5 bg-border overflow-hidden rounded-full">
+            <motion.div
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 1, ease: "easeInOut" }}
+              className="w-full bg-gradient-gold origin-top"
+            />
+          </div>
+
+          <ol className="flex flex-col sm:flex-row sm:items-start gap-5 sm:gap-0">
+            {steps.map((s, i) => {
+              const Icon = s.icon;
+              return (
+                <motion.li
+                  key={s.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.5, delay: i * 0.12, type: "spring", stiffness: 200, damping: 16 }}
+                  className="flex items-start gap-4 sm:flex-1 sm:flex-col sm:items-center sm:text-center sm:px-2"
+                >
+                  <div className="relative shrink-0">
+                    <motion.div
+                      initial={{ scale: 0, rotate: -90 }}
+                      whileInView={{ scale: 1, rotate: 0 }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      transition={{ delay: i * 0.12 + 0.1, type: "spring", stiffness: 220, damping: 14 }}
+                      className="size-14 rounded-2xl bg-gradient-gold flex items-center justify-center shadow-gold relative z-10"
+                    >
+                      <Icon className="size-6 text-primary-foreground" />
+                    </motion.div>
+                    <span className="absolute -top-1.5 -right-1.5 size-5 rounded-full bg-forest-deep border border-gold/50 text-[10px] font-bold text-gold flex items-center justify-center z-20">
+                      {i + 1}
+                    </span>
                   </div>
-                  <div className="sm:mt-0">
-                    <h3 className="font-display text-sm font-semibold text-foreground leading-tight">
-                      {s.title}
-                    </h3>
-                    <p className="hidden sm:block text-xs text-foreground/60 leading-snug mt-0.5">
-                      {s.desc}
-                    </p>
+                  <div className="sm:mt-4 flex-1">
+                    <h3 className="font-display text-base text-foreground leading-tight mb-1">{s.title}</h3>
+                    <p className="text-sm text-foreground/60 leading-snug">{s.desc}</p>
                   </div>
-                </div>
-                {i < steps.length - 1 && (
-                  <ArrowRight className="size-4 text-gold/40 shrink-0 mx-1 sm:mx-auto sm:my-1 sm:block sm:rotate-90 lg:rotate-0" />
-                )}
-              </motion.li>
-            );
-          })}
-        </motion.ol>
+                </motion.li>
+              );
+            })}
+          </ol>
+        </div>
 
         {/* Bottom row: environments + differentials */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Environments */}
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -113,7 +129,6 @@ export function Overview() {
             </div>
           </motion.div>
 
-          {/* Differentials */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -121,7 +136,7 @@ export function Overview() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="text-xs uppercase tracking-[0.2em] text-gold mb-3">Por que o Doutor Ambiental</div>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2">
               {differentials.map((d, i) => (
                 <motion.li
                   key={i}
