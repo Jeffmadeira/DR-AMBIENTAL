@@ -11,7 +11,7 @@ import technician from "@/assets/technician.jpg";
 
 export function Hero() {
   return (
-    <section id="top" className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden noise-overlay">
+    <section id="top" className="relative min-h-screen lg:flex lg:items-center pt-28 pb-16 overflow-hidden noise-overlay">
       {/* gradient ambient */}
       <div className="absolute inset-0 bg-gradient-forest" />
       <motion.div
