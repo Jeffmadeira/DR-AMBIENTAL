@@ -60,7 +60,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="mt-6 text-lg text-foreground/75 max-w-xl leading-relaxed"
           >
-            A Doutor Ambiental chega a Sorocaba com o respaldo da <span className="text-gold font-semibold">Ártica Saúde Ambiental</span>, grupo com 9 anos de atuação no controle de pragas e experiência em grandes operações em todo o Brasil. Controle técnico, seguro e estratégico para residências, comércios e empresas.
+            Estrutura local em Sorocaba com o respaldo da <span className="text-gold font-semibold">Ártica Saúde Ambiental</span> — 9 anos de operação nacional.
           </motion.p>
 
           <motion.div
