@@ -10,14 +10,14 @@ const items = [
 
 export function Differentials() {
   return (
-    <section id="diferenciais" className="py-28 bg-background">
+    <section id="diferenciais" className="py-16 bg-background">
       <div className="max-w-7xl mx-auto px-5 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, type: "spring", stiffness: 100, damping: 18 }}
-          className="text-center max-w-2xl mx-auto mb-16"
+          className="text-center max-w-2xl mx-auto mb-10"
         >
           <div className="text-xs uppercase tracking-[0.3em] text-gold mb-3">Por que contratar</div>
           <h2 className="font-display text-4xl sm:text-5xl">
