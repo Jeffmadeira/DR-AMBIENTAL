@@ -56,7 +56,7 @@ const services: Service[] = [
   },
   {
     icon: CockroachIcon,
-    title: "Dedetização de Baratas",
+    title: "BARATAS",
     desc: "Controle técnico de barata de esgoto, voadora e francesinha.",
     details: [
       {
@@ -204,7 +204,7 @@ const services: Service[] = [
   },
   {
     icon: AntIcon,
-    title: "Dedetização de Formigas",
+    title: "FORMIGAS",
     desc: "Controle de formigas doceiras, cortadeiras e ninhos ocultos.",
     details: [
       {
@@ -280,7 +280,7 @@ const services: Service[] = [
   },
   {
     icon: WaspIcon,
-    title: "Remoção de Vespas e Marimbondos",
+    title: "VESPAS E MARIMBONDOS",
     desc: "Remoção técnica de ninhos em beirais, forros e áreas externas.",
     details: [
       {
