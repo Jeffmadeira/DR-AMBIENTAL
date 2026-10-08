@@ -75,7 +75,7 @@ const services: Service[] = [
   },
   {
     icon: Rat,
-    title: "Desratização",
+    title: "RATOS",
     desc: "Controle de ratazanas, ratos de telhado e camundongos.",
     details: [
       {
@@ -94,7 +94,7 @@ const services: Service[] = [
   },
   {
     icon: TermiteIcon,
-    title: "Descupinização",
+    title: "CUPIM",
     desc: "Proteção contra cupim subterrâneo e cupim de madeira seca.",
     details: [
       {
