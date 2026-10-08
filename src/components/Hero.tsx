@@ -58,16 +58,16 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="mt-6 text-lg text-foreground/75 max-w-xl leading-relaxed whitespace-pre-line"
+            className="mt-6 text-lg text-foreground/75 max-w-xl leading-relaxed"
           >
-            {`Uma solução definitiva contra as pragas com a experiência do Grupo Ártica Saúde Ambiental\n\n\n`}
+            {`Uma solução definitiva contra as pragas com a experiência do Grupo Ártica Saúde Ambiental`}
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.45 }}
-            className="mt-10 flex flex-wrap gap-4"
+            className="mt-6 flex flex-wrap gap-4"
           >
             <motion.a
               whileHover={{ scale: 1.06, y: -2 }}
@@ -103,7 +103,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl"
+            className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl"
           >
             {[
               { value: "9", label: "Anos de operação" },
