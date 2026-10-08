@@ -30,7 +30,7 @@ export function CTASection() {
           <div className="relative">
             <div className="text-xs uppercase tracking-[0.3em] text-gold mb-4">Não espere o problema crescer</div>
             <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl mb-5">
-              Viu uma praga? <span className="text-gradient-gold">Aja agora.</span>
+              Viu uma praga? <span className="text-gradient-gold">RESOLVA AGORA.</span>
             </h2>
             <p className="text-foreground/75 max-w-xl mx-auto mb-8">
               Quanto antes o problema for identificado, mais simples tende a ser o controle. Fale com a equipe da Doutor
