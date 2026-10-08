@@ -60,7 +60,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="mt-6 text-lg text-foreground/75 max-w-xl leading-relaxed whitespace-pre-line"
           >
-            {`Uma solução definitiva contra as pragas com a experiência do\nGrupo\u00a0Ártica Saúde Ambiental\n\n`}
+            {`Uma solução definitiva contra as pragas com a experiência do Grupo |Ártica Saúde Ambiental\n\n\n`}
           </motion.p>
 
           <motion.div
